@@ -1,0 +1,33 @@
+.mobile{
+  margin-top: 0%;
+}
+@media screen and (max-width: 768px) {
+  .mobile {
+    margin-top: 12%;
+  }
+}
+
+.responsive-iframe-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+}
+
+.responsive-iframe-container iframe,
+.vresponsive-iframe-container object,
+.vresponsive-iframe-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#currentDate1{
+  color:white;
+}
+.date-top{
+  color:white;
+}

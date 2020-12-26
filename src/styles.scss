@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+html,body {
+  height: 100%;
+  width: 100%;
+    overflow: hidden;
+    margin: 0;
+}
+html, body{
+  background: url(https://images.pexels.com/photos/5997882/pexels-photo-5997882.jpeg?cs=srgb&dl=pexels-nadezhda-moryak-5997882.jpg&fm=jpg);
+}
+
+@media screen and (max-width: 768px) {
+  html,
+  body {
+    background: url(https://images.pexels.com/photos/5997882/pexels-photo-5997882.jpeg?cs=srgb&dl=pexels-nadezhda-moryak-5997882.jpg&fm=jpg) no-repeat center fixed;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%;
+  }
+}
+
+@font-face {
+  font-family: Open-Sans;
+  src: url(assets/OpenSans/OpenSans-Bold.ttf) format("opentype");
+}
+
+*{
+  font-family: Open-Sans, Helvetica, Arial, sans-serif;
+}
