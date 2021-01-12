@@ -9,6 +9,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { CalendarComponent } from './calendar/calendar.component';
+import { TrelloComponent } from './trello/trello.component';
+import { StatsComponent } from './stats/stats.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { CalendarComponent } from './calendar/calendar.component';
     HomeComponent,
     NavbarComponent,
     AboutUsComponent,
-    CalendarComponent
+    CalendarComponent,
+    TrelloComponent,
+    StatsComponent
   ],
   imports: [
     BrowserModule,
