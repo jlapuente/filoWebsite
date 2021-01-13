@@ -33,4 +33,10 @@ export class NavbarComponent implements OnInit {
     //   }, 5500);
     // });
   }
+
+
+  closeNav(){
+    let navCloser = document.getElementById("burger");
+    navCloser.click();
+  }
 }

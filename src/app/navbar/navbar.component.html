@@ -4,16 +4,16 @@
 </button>
 <nav class="main-nav" id="main-nav">
   <ul>
-    <li class="nav-item " routerLinkActive="active">
+    <li class="nav-item" (click)="closeNav()" routerLinkActive="active">
       <a class="nav-link" routerLink="home">Home</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" (click)="closeNav()">
       <a class="nav-link" routerLink="gallery">Galeria</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" (click)="closeNav()">
       <a class="nav-link" routerLink="trello">Trello</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" (click)="closeNav()">
       <a href="stats">Estadisticas</a>
     </li>
     <li>
