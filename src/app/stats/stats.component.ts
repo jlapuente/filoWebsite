@@ -12,10 +12,36 @@ export class StatsComponent implements OnInit {
 
   labels: number[] = [];
   marks: number[] = [];
+  calculatedMarks: number[] = [];
   chart: any;
   ctx: any;
 
-
+  colors: string[] = [
+    'rgba(84, 71, 140, 0.6)',
+    'rgba(44, 105, 154, 0.6)',
+    'rgba(4, 139, 168, 0.6)',
+    'rgba(13, 179, 158, 0.6)',
+    'rgba(22, 219, 147, 0.6)',
+    'rgba(131, 227, 119, 0.6)',
+    'rgba(185, 231, 105, 0.6)',
+    'rgba(239, 234, 90, 0.6)',
+    'rgba(241, 196, 83, 0.6)',
+    'rgba(242, 158, 76, 0.6)',
+    'rgba(255, 56, 100, 0.6)'
+  ];
+  borderColors: string[] = [
+    'rgba(84, 71, 140, 1)',
+    'rgba(44, 105, 154, 1)',
+    'rgba(4, 139, 168, 1)',
+    'rgba(13, 179, 158, 1)',
+    'rgba(22, 219, 147, 1)',
+    'rgba(131, 227, 119, 1)',
+    'rgba(185, 231, 105, 1)',
+    'rgba(239, 234, 90, 1)',
+    'rgba(241, 196, 83, 1)',
+    'rgba(242, 158, 76, 1)',
+    'rgba(255, 56, 100, 1)'
+  ];
   constructor() { }
 
   ngOnInit() {
@@ -33,26 +59,12 @@ export class StatsComponent implements OnInit {
     this.chart = new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: this.labels,
         datasets: [{
-          label: '# of Votes',
-          data: [12, 19, 3, 5, 2, 3],
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(255, 206, 86, 0.2)',
-            'rgba(75, 192, 192, 0.2)',
-            'rgba(153, 102, 255, 0.2)',
-            'rgba(255, 159, 64, 0.2)'
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
-          ],
+          label: 'Notas',
+          data: this.calculatedMarks,
+          backgroundColor: this.colors,
+          borderColor: this.borderColors,
           borderWidth: 1
         }]
       },
@@ -60,60 +72,46 @@ export class StatsComponent implements OnInit {
         scales: {
           yAxes: [{
             ticks: {
-              beginAtZero: true
+              beginAtZero: true,
+              stepSize: 1
             }
           }]
+        },
+        legend: {
+          display: false
+        },
+        tooltips: {
+          enabled: false
         }
       }
     });
-    //   type: 'bar',
-    //   data: {
-    //     labels: this.labels,
-    //     datasets: [{
-    //       label: 'Notas',
-    //       data: this.marks,
-    //       backgroundColor: [
-    //         'rgba(255, 99, 132, 0.2)',
-    //         'rgba(54, 162, 235, 0.2)',
-    //         'rgba(255, 206, 86, 0.2)',
-    //         'rgba(75, 192, 192, 0.2)',
-    //         'rgba(153, 102, 255, 0.2)',
-    //         'rgba(255, 159, 64, 0.2)'
-    //       ],
-    //       borderColor: [
-    //         'rgba(255, 99, 132, 1)',
-    //         'rgba(54, 162, 235, 1)',
-    //         'rgba(255, 206, 86, 1)',
-    //         'rgba(75, 192, 192, 1)',
-    //         'rgba(153, 102, 255, 1)',
-    //         'rgba(255, 159, 64, 1)'
-    //       ],
-    //       borderWidth: 1
-    //     }]
-    //   },
-    //   // options: {
-    //   //   scales: {
-    //   //     yAxes: [{
-    //   //       ticks: {
-    //   //         beginAtZero: true
-    //   //       }
-    //   //     }]
-    //   //   }
-    //   // }
-    // });
     console.log(this.chart);
   }
 
   calculateMarks(){
-    this.marks.push(1); // Javi
-    this.marks.push(1); // Sofi
-    this.marks.push(2); // Mario
-    this.marks.push(3); // Marquina
-    this.marks.push(4); // Alex
-    this.marks.push(5); // Alex
-    this.marks.push(5); // Claudia
-    this.marks.push(5); // Carla
-    this.marks.push(5); // Lara
+    this.marks.push(5); // Cristobal
+    this.marks.push(7); // Angel
+    this.marks.push(0); // Carlos
+    this.marks.push(10); // Yolanda
+    this.marks.push(0); // Carmen
+    this.marks.push(0); // Lara
+    this.marks.push(9); // Martin '5
+    this.marks.push(2); // Fer '5
+    this.marks.push(9); // Alex
+    this.marks.push(6); // Sofia '25
+    this.marks.push(7); // Javier '5
+    this.marks.push(8); // Capi '75
+    this.marks.push(9); // Jon 
+    this.marks.push(4); // Paola 
+    this.marks.push(8); // Mario '5
+    this.marks.push(0); // Eli 
+    this.marks.push(7); // Maria '5
+
+
+    for (let index = 0; index < this.marks.length; index++) {
+      this.calculatedMarks.push(this.getOccurrence(this.marks, index));
+    }
+
     this.prepareGraph();
   }
 
@@ -123,4 +121,12 @@ export class StatsComponent implements OnInit {
     }
     this.calculateMarks();
   }
+
+ getOccurrence(array, value) {
+  var count = 0;
+  array.forEach((v) => (v === value && count++));
+  return count;
+}
+
+  
 }
