@@ -1,8 +1,9 @@
-:host ::ng-deep html, body {
-  background-color: white;
-  background: white!important;
-  overflow: auto;
+.info__wrapper {
+  background: purple; // TODO Cambiame
+  width: 100vw;
+  height: 100vw;
 }
+
 .mobile {
   margin-top: 0%;
 }
@@ -31,12 +32,12 @@ ul.listree-submenu-items {
 }
 
 div.listree-submenu-heading.collapsed:before {
-  content: "+";
+  content: '+';
   margin-right: 4px;
 }
 
 div.listree-submenu-heading.expanded:before {
-  content: "-";
+  content: '-';
   margin-right: 4px;
 }
 
