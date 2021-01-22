@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { TrelloComponent } from './trello/trello.component';
@@ -27,8 +26,7 @@ import { InfoComponent } from './info/info.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    FontAwesomeModule
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
