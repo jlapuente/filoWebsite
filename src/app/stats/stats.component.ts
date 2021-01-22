@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart } from 'node_modules/chart.js';
-import { CONSTANTS } from '../properties/CONSTANTS'
+import { CONSTANTS } from '../properties/constants'
 
 
 @Component({
