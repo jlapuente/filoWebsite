@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { faSync } from '@fortawesome/free-solid-svg-icons';
 declare var $: any;
 
 @Component({
@@ -8,7 +7,6 @@ declare var $: any;
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  faSync = faSync;
   $: any;
   constructor() { }
 
