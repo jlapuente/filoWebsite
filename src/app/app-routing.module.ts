@@ -5,6 +5,7 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { HomeComponent } from './home/home.component';
 import { InfoComponent } from './info/info.component';
 import { StatsComponent } from './stats/stats.component';
+import { TeachersComponent } from './teachers/teachers.component';
 import { TrelloComponent } from './trello/trello.component';
 
 
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'trello', component: TrelloComponent},
   { path: 'stats', component: StatsComponent},
   { path: 'info', component: InfoComponent},
+  { path: 'teachers', component: TeachersComponent},
   { path: '**', pathMatch: 'full', redirectTo: 'home' }
 
 ];

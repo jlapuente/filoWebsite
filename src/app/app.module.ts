@@ -11,6 +11,7 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { TrelloComponent } from './trello/trello.component';
 import { StatsComponent } from './stats/stats.component';
 import { InfoComponent } from './info/info.component';
+import { TeachersComponent } from './teachers/teachers.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { InfoComponent } from './info/info.component';
     CalendarComponent,
     TrelloComponent,
     StatsComponent,
-    InfoComponent
+    InfoComponent,
+    TeachersComponent
   ],
   imports: [
     BrowserModule,

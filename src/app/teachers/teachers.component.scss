@@ -1,0 +1,9 @@
+.mobile {
+  margin-top: 0%;
+}
+
+@media screen and (max-width: 768px) {
+  .mobile {
+    margin-top: 12%;
+  }
+}
