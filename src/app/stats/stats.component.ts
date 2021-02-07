@@ -15,6 +15,8 @@ export class StatsComponent implements OnInit {
   calculatedLogicMarks: number[] = [];
   calculatedPoliticsMarks: number[] = [];
   calculatedIPFMarks: number[] = [];
+  calculatedAntropologyMarks: number[] = [];
+  calculatedEpistemologyMarks: number[] = [];
   chart: any;
   ctx: any;
 
@@ -25,8 +27,10 @@ export class StatsComponent implements OnInit {
   ngOnInit() {
     this.prepareLabels();
     this.calculateMarks(this.calculatedPoliticsMarks, CONSTANTS.POLITICS_MARKS, document.getElementById('politicsChart'), CONSTANTS.TEN_ESCALE);
-    this.calculateMarks(this.calculatedIPFMarks, CONSTANTS.IPF_MARKS, document.getElementById('ipfChart'), CONSTANTS.SINGLE_ESCALE);
+    this.calculateMarks(this.calculatedIPFMarks, CONSTANTS.IPF_MARKS, document.getElementById('ipfChart'), CONSTANTS.FIVE_ESCALE);
     this.calculateMarks(this.calculatedLogicMarks, CONSTANTS.LOGIC_MARKS, document.getElementById('logicChart'), CONSTANTS.SINGLE_ESCALE);
+    this.calculateMarks(this.calculatedAntropologyMarks, CONSTANTS.ANTROPOLOGY_MARKS, document.getElementById('antropologyChart'), CONSTANTS.FIVE_ESCALE);
+    this.calculateMarks(this.calculatedEpistemologyMarks, CONSTANTS.EPISTEMOLOGY_MARKS, document.getElementById('epistemologyChart'), CONSTANTS.FIVE_ESCALE);
   }
 
 
