@@ -1,0 +1,96 @@
+.calendarContainer {
+  height: 100vh;
+  width: 100%;
+  display: inline;
+}
+
+// Estilos importados: 
+.responsive-iframe-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+}
+
+.responsive-iframe-container iframe,
+.vresponsive-iframe-container object,
+.vresponsive-iframe-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#currentDate1 {
+  color: white;
+}
+
+.date-top {
+  color: white;
+}
+
+// Boton Spinner
+@mixin animation-name($name) {
+  animation-name: $name;
+  -webkit-animation-name: $name;
+  -moz-animation-name: $name;
+  -ms-animation-name: $name;
+}
+
+@mixin animation-duration($duration) {
+  animation-duration: $duration;
+  -webkit-animation-duration: $duration;
+  -moz-animation-duration: $duration;
+  -ms-animation-duration: $duration;
+}
+
+@mixin animation-timing-function($func) {
+  animation-timing-function: $func;
+  -webkit-animation-timing-function: $func;
+  -moz-animation-timing-function: $func;
+  -ms-animation-timing-function: $func;
+}
+
+@mixin animation($name, $duration, $timing-func) {
+  @include animation-name($name);
+  @include animation-duration($duration);
+  @include animation-timing-function($timing-func);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg)
+  }
+}
+
+.icon-btn {
+  border: none;
+  background-color: transparent;
+  outline: 0;
+
+  i {
+    color: #446CB3;
+    font-size: 2em;
+    cursor: pointer;
+  }
+
+
+  i.spin-animation {
+    @include animation(spin, 0.5s, ease-in);
+  }
+}
+
+.my-btn {
+  display: inline;
+}
+
+.calendarBoton {
+  display: inline;
+  margin-left: 2%;
+}
+
+.calendarTitle {
+  display: inline;
+}

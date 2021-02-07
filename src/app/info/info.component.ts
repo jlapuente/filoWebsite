@@ -1,48 +1,30 @@
+import { NestedTreeControl } from '@angular/cdk/tree';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-declare var $: any;
-// import * as treeview from "../../assets/plugins/js/bootstrap-treeview.js";
+import { MatTreeNestedDataSource } from '@angular/material/tree';
+import {InfoNode, CONSTANTS} from '../properties/constants'
 
 @Component({
   selector: 'app-info',
   templateUrl: './info.component.html',
-  encapsulation: ViewEncapsulation.None,
+  // encapsulation: ViewEncapsulation.None,
   styleUrls: ['./info.component.scss']
 })
 export class InfoComponent implements OnInit {
 
   $: any;
-  constructor() { }
+  treeControl = new NestedTreeControl<InfoNode>(node => node.children);
+  dataSource = new MatTreeNestedDataSource<InfoNode>();
 
 
-  ngOnInit() {
-    this.listree();
+  constructor() { 
+    this.dataSource.data = CONSTANTS.TREE_DATA;
   }
+  ngOnInit() {
+  }
+  hasChild = (_: number, node: InfoNode) => !!node.children && node.children.length > 0;
+  hasLink = (_: number, node: InfoNode) => !!node.link && node.link.length > 0;
 
 
-listree = function () {
-  const subMenuHeadings = document.getElementsByClassName("listree-submenu-heading");
-  Array.from(subMenuHeadings).forEach(function (subMenuHeading) {
-    subMenuHeading.classList.add("collapsed");
-    let nextSibling: any = subMenuHeading.nextElementSibling;
-    nextSibling.style.display = "none";
-    subMenuHeading.addEventListener('click', function (event) {
-      event.preventDefault();
-      let targetSibling: any = event.target;
-      const subMenuList = targetSibling.nextElementSibling;
-      if (subMenuList.style.display == "none") {
-        subMenuHeading.classList.remove("collapsed");
-        subMenuHeading.classList.add("expanded");
-        subMenuList.style.display = "block";
-      }
-      else {
-        subMenuHeading.classList.remove("expanded");
-        subMenuHeading.classList.add("collapsed");
-        subMenuList.style.display = "none";
-      }
-      event.stopPropagation();
-    });
-  });
-}
 
 
 }

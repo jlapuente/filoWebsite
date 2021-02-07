@@ -4,6 +4,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { HomeComponent } from './home/home.component';
 import { InfoComponent } from './info/info.component';
+import { OrganizationComponent } from './organization/organization.component';
 import { StatsComponent } from './stats/stats.component';
 import { TeachersComponent } from './teachers/teachers.component';
 import { TrelloComponent } from './trello/trello.component';
@@ -13,7 +14,7 @@ const routes: Routes = [
   { path: 'gallery', component: GalleryComponent },
   {path: 'home', component: HomeComponent},
   { path: 'about-us', component: AboutUsComponent},
-  { path: 'trello', component: TrelloComponent},
+  { path: 'organization', component: OrganizationComponent},
   { path: 'stats', component: StatsComponent},
   { path: 'info', component: InfoComponent},
   { path: 'teachers', component: TeachersComponent},

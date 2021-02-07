@@ -1,106 +1,29 @@
-<div class="info__wrapper">
-  <div class="container mobile">
-    <div class="row">
-      <div class="col-sm-12 col-md-6">
-        <h1>Links Útiles</h1>
-        <p class="lead">Apartado en el que podras encontrar links utiles de todas las asignaturas asi como horarios,
-          apuntes,
-          textos...</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-12 col-md-6">
-        <ul class="listree">
-          <li>
-            <div class="listree-submenu-heading">Unizar</div>
-            <ul class="listree-submenu-items">
-              <li>
-                <div class="listree-submenu-heading">Asignaturas</div>
-                <ul class="listree-submenu-items">
-                  <li>
-                    <div class="listree-submenu-heading">Introducción a los problemas filosóficos</div>
-                    <ul class="listree-submenu-items">
-                      <li>
-                        <a href="https://filosofia.unizar.es/ipf-0">Página de la universidad</a>
-                      </li>
-                      <li>
-                        <a href="../../assets/docs/Temas.zip"
-                          download="">Temas redactados</a>
-                      </li>
-                      <li>
-                        <a href="https://moodle.unizar.es/add/course/view.php?id=37372">Moodle</a>
-                      </li>
-                    </ul>
-                    <div class="listree-submenu-heading">Introducción a la Lógica</div>
-                    <ul class="listree-submenu-items">
-                      <li>
-                        <a href="">?</a>
-                      </li>
-                    </ul>
-                    <div class="listree-submenu-heading">Epistemología de las ciencias humanas</div>
-                    <ul class="listree-submenu-items">
-                      <li>
-                        <a href="https://moodle.unizar.es/add/course/view.php?id=35946">Moodle</a>
-                      </li>
-                    </ul>
-                    <div class="listree-submenu-heading">Política y filosofía del mundo contemporaneo</div>
-                    <ul class="listree-submenu-items">
-                      <li>
-                        <a href="">Página de la universidad</a>
-                      </li>
-                    </ul>
-                    <div class="listree-submenu-heading">Antropología</div>
-                    <ul class="listree-submenu-items">
-                      <li>
-                        <a href="https://moodle.unizar.es/add/course/view.php?id=38075">Moodle</a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-                <ul class="listree-submenu-items">
-                  <li>
-                    <a href="https://fyl.unizar.es/grado/grado-en-filosofia#overlay-context=grado/grado-en-filosofia">Página
-                      Web de la Facultad</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <div class="listree-submenu-heading">Otros</div>
-                <ul class="listree-submenu-items">
-                  <li>
-                    <div class="listree-submenu-heading">Bibliotecas</div>
-                    <ul class="listree-submenu-items">
-                      <li>
-                        <a href="https://drive.google.com/drive/folders/1n5s-1kb7ebCZwAXmQvhoidGQfIrO4Ooe?usp=sharing">Biblioteca
-                          politica - Drive</a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <div class="listree-submenu-heading">Miscelanéa</div>
-            <ul class="listree-submenu-items">
-              <li>
-                <div class="listree-submenu-heading">Spotify APK - 16/01/2021</div>
-                <ul class="listree-submenu-items">
-                  <li><a href="../../assets/docs/8.5.93.445_spremium-telegram.apk"
-                      download="">8.5.93.445_spremium-telegram.apk</a>
-                  </li>
-                  <!-- <li><a href="">Viewing Preferences</a></li> -->
-                </ul>
-              </li>
-              <li>
-                <div class="listree-submenu-heading">Juegos para jugar en clase</div>
-                <ul class="listree-submenu-items">
-                  <li><a href="https://www.google.com/search?client=firefox-b-d&q=snake">Snake</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
+<div class="container mobile">
+  <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="example-tree">
+    <!-- This is the tree node template for leaf nodes -->
+    <mat-tree-node *matTreeNodeDef="let node; let index" matTreeNodeToggle>
+      <li class="mat-tree-node">
+        <!-- use a disabled button to provide padding for tree leaf -->
+        <button mat-icon-button disabled></button>
+        <span *ngIf="!hasLink(index, node)">{{node.name}}</span>
+        <a *ngIf="hasLink(index, node)" href={{node.link}}>{{node.name}}</a>
+      </li>
+    </mat-tree-node>
+    <!-- This is the tree node template for expandable nodes -->
+    <mat-nested-tree-node *matTreeNodeDef="let node; when: hasChild">
+      <li>
+        <div class="mat-tree-node">
+          <button mat-icon-button matTreeNodeToggle [attr.aria-label]="'Toggle ' + node.name">
+            <mat-icon class="mat-icon-rtl-mirror">
+              {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+            </mat-icon>
+          </button>
+          {{node.name}}
+        </div>
+        <ul [class.example-tree-invisible]="!treeControl.isExpanded(node)">
+          <ng-container matTreeNodeOutlet></ng-container>
         </ul>
-      </div>
-    </div>
-  </div>
+      </li>
+    </mat-nested-tree-node>
+  </mat-tree>
+</div>

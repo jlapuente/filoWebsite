@@ -12,6 +12,13 @@ import { TrelloComponent } from './trello/trello.component';
 import { StatsComponent } from './stats/stats.component';
 import { InfoComponent } from './info/info.component';
 import { TeachersComponent } from './teachers/teachers.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTreeModule } from '@angular/material/tree'; 
+import { MatIconModule } from '@angular/material/icon'; 
+import { MatSliderModule } from '@angular/material/slider';
+import { MatButtonModule } from '@angular/material';
+import { OrganizationComponent } from './organization/organization.component';
+import { MatTabsModule } from '@angular/material/tabs'; 
 
 @NgModule({
   declarations: [
@@ -24,11 +31,18 @@ import { TeachersComponent } from './teachers/teachers.component';
     TrelloComponent,
     StatsComponent,
     InfoComponent,
-    TeachersComponent
+    TeachersComponent,
+    OrganizationComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatTreeModule,
+    MatIconModule,
+    MatSliderModule,
+    MatButtonModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,3 +1,12 @@
-<iframe
-  src="https://calendar.google.com/calendar/embed?src=c_0jsoe6263ovg1dt5ausfrjmgj8%40group.calendar.google.com&ctz=Europe%2FMadrid"
-  style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+<div class="agenda calendarContainer">
+  <h3 class="calendarTitle" (click)="this.animate()" >Agenda</h3>
+  <iframe
+    src="https://calendar.google.com/calendar/embed?height=800&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Europe%2FMadrid&amp;src=Y18wanNvZTYyNjNvdmcxZHQ1YXVzZnJqbWdqOEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23D50000&amp;showDate=0&amp;showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;showTitle=0"
+    style="border:solid 1px #777" height="100%" width="100%" frameborder="0" scrolling="no"></iframe>
+</div>
+<div class="birthday calendarContainer" style="display: none;">
+  <h3 class="calendarTitle" (click)="this.animate()">Cumpleaños</h3>
+  <iframe
+    src="https://calendar.google.com/calendar/embed?height=1200&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Europe%2FMadrid&amp;src=Y19wbjZidnBmaGFjNmgybm10aTBrOGExNTVrY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%234285F4&amp;showTz=0&amp;showNav=1&amp;showDate=1&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;mode=MONTH&amp;showTitle=0&amp;title"
+    style="border-width:0" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
+</div>
