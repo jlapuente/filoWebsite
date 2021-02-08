@@ -1,18 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 html,body {
   width: 100%;
-    margin: 0;
-}
-html, body{
-  background: url(https://images.pexels.com/photos/5997882/pexels-photo-5997882.jpeg?cs=srgb&dl=pexels-nadezhda-moryak-5997882.jpg&fm=jpg);
-}
-
-@media screen and (max-width: 768px) {
-  html,
-  body {
-    background-color: white;
-    background: white;
-  }
+  height: 100%;
+  margin: 0;
 }
 
 @font-face {
@@ -22,4 +12,9 @@ html, body{
 
 *{
   font-family: Open-Sans, Helvetica, Arial, sans-serif;
+}
+:root {
+    --primary-color: #438ccc;
+    --accent-color: #f4ac4c;
+    --font-size: 50px;
 }

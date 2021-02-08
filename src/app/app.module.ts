@@ -16,9 +16,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTreeModule } from '@angular/material/tree'; 
 import { MatIconModule } from '@angular/material/icon'; 
 import { MatSliderModule } from '@angular/material/slider';
-import { MatButtonModule } from '@angular/material';
+import { MatButtonModule, MatListModule } from '@angular/material';
 import { OrganizationComponent } from './organization/organization.component';
 import { MatTabsModule } from '@angular/material/tabs'; 
+import { MatToolbarModule } from '@angular/material/toolbar'; 
+import { MatSidenavModule } from '@angular/material/sidenav'; 
+import { MatCardModule } from '@angular/material/card'; 
 
 @NgModule({
   declarations: [
@@ -42,7 +45,11 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatIconModule,
     MatSliderModule,
     MatButtonModule,
-    MatTabsModule
+    MatTabsModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
