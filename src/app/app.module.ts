@@ -19,6 +19,8 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatButtonModule } from '@angular/material';
 import { OrganizationComponent } from './organization/organization.component';
 import { MatTabsModule } from '@angular/material/tabs'; 
+import { MatToolbarModule } from '@angular/material/toolbar'; 
+import { MatSidenavModule } from '@angular/material/sidenav'; 
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatIconModule,
     MatSliderModule,
     MatButtonModule,
-    MatTabsModule
+    MatTabsModule,
+    MatToolbarModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]

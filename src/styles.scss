@@ -1,7 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
-html,body {
-  width: 100%;
-    margin: 0;
+html,
+body {
+  min-height: 100vh;
+  height: auto;
+  margin: 0;
 }
 html, body{
   background: url(https://images.pexels.com/photos/5997882/pexels-photo-5997882.jpeg?cs=srgb&dl=pexels-nadezhda-moryak-5997882.jpg&fm=jpg);

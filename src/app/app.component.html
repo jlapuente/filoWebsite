@@ -1,3 +1,41 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<app-navbar></app-navbar>
-<router-outlet></router-outlet>
+<mat-sidenav-container class="example-container">
+  <mat-toolbar color="primary">
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <a href="home">Primero de Filosofía UNIZAR</a>
+  </mat-toolbar>
+  <mat-sidenav #sidenav mode="over" [(opened)]="opened">
+    <div class="sidenav-top">
+      <div class="sidenav-top-text">Websites</div><svg class="sidenav-close-button" viewBox="0 0 24 24">
+        <path fill="currentColor"
+          d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z">
+        </path>
+      </svg>
+    </div>
+    <div class="sidenav-card card">
+    <div class="sidenav-card-body card-body">
+      <div class="sidenav-card-text" (click)="closeNav()">
+        <a class="nav-link" routerLink="organization">Organizador</a>
+      </div>
+    </div>
+    <div class="sidenav-card-body card-body">
+      <div class="sidenav-card-text" (click)="closeNav()">
+        <a href="stats">Estadísticas</a>
+      </div>
+    </div>
+    <div class="sidenav-card-body card-body">
+      <div class="sidenav-card-text" (click)="closeNav()">
+        <a href="teachers">Profesores</a>
+      </div>
+    </div>
+    <div class="sidenav-card-body card-body">
+      <div class="sidenav-card-text" (click)="closeNav()">
+        <a href="info">Links Útiles</a>
+      </div>
+    </div>
+    </div>
+  </mat-sidenav>
+  <router-outlet></router-outlet>
+</mat-sidenav-container>
