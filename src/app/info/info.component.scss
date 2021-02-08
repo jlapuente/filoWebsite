@@ -1,5 +1,4 @@
 .info__wrapper {
-  background: white; // TODO Cambiame
   width: 100vw;
   height: 100vh;
   overflow: auto  ;
@@ -7,12 +6,18 @@
 
 .mobile {
   margin-top: 0%;
+  margin: auto;
+  display: block;
 }
 
 @media screen and (max-width: 768px) {
   .mobile {
     margin-top: 12%;
   }
+}
+
+.mat-tree{
+  background: none;
 }
 
 // Estilos importados
