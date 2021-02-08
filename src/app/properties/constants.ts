@@ -58,9 +58,31 @@ export class CONSTANTS {
   ];
 }
 
-
 export interface InfoNode {
   name: string;
   link?: string;
   children?: InfoNode[];
+}
+
+export class Card {
+  img?: string;
+  title: string;
+  subtitle?: string;
+  body?: string;
+  link?: Link;
+  constructor(img, title, subtitle, body, link) {
+    this.img = img;
+    this.title = title;
+    this.subtitle = subtitle;
+    this.body = body;
+    this.link = link
+  }
+}
+export class Link {
+  text: string;
+  href: string;
+  constructor(text, href) {
+    this.text = text;
+    this.href = href;
+  }
 }
