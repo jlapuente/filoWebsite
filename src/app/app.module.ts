@@ -16,12 +16,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTreeModule } from '@angular/material/tree'; 
 import { MatIconModule } from '@angular/material/icon'; 
 import { MatSliderModule } from '@angular/material/slider';
-import { MatButtonModule, MatListModule } from '@angular/material';
+import { MatButtonModule, MatListModule, MatPaginatorModule, MatTableModule } from '@angular/material';
 import { OrganizationComponent } from './organization/organization.component';
 import { MatTabsModule } from '@angular/material/tabs'; 
 import { MatToolbarModule } from '@angular/material/toolbar'; 
 import { MatSidenavModule } from '@angular/material/sidenav'; 
 import { MatCardModule } from '@angular/material/card'; 
+import { HttpClientModule } from '@angular/common/http';
+import { MatTooltipModule } from '@angular/material/tooltip'; 
 
 @NgModule({
   declarations: [
@@ -49,7 +51,11 @@ import { MatCardModule } from '@angular/material/card';
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatTooltipModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

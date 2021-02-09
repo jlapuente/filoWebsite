@@ -85,4 +85,21 @@ export class Link {
     this.text = text;
     this.href = href;
   }
+
+}
+export class Commit {
+  autor: string;
+  fecha: Date;
+  comentario: string;
+  detalle: string;
+  constructor(autor, fecha, descripcion: string){
+    this.autor = autor;
+    this.fecha = fecha;
+    if(descripcion.length > 30){
+      this.comentario = descripcion.substr(0, 80) + "...";
+    } else {
+      this.comentario = descripcion;
+    }
+    this.detalle = descripcion;
+  }
 }
