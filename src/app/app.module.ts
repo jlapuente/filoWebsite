@@ -23,7 +23,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav'; 
 import { MatCardModule } from '@angular/material/card'; 
 import { HttpClientModule } from '@angular/common/http';
-import { MatTooltipModule } from '@angular/material/tooltip'; 
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { ScheduleComponent } from './schedule/schedule.component'; 
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     StatsComponent,
     InfoComponent,
     TeachersComponent,
-    OrganizationComponent
+    OrganizationComponent,
+    ScheduleComponent
   ],
   imports: [
     BrowserModule,

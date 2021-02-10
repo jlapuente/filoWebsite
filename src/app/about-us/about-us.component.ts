@@ -61,7 +61,6 @@ export class AboutUsComponent implements OnInit {
       this.dataSource = new MatTableDataSource(this.commitList);
       this.resultsLength = this.commitList.length;
       this.dataSource.paginator = this.paginator;
-      console.log(this.commitList);
     })
   }
 }
