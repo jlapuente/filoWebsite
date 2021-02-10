@@ -25,7 +25,9 @@ export class AboutUsComponent implements OnInit {
   
   gitHubApi: string = 'https://api.github.com/repos/jlapuente/filoWebsite/commits';
   commitList: Commit[] = [];
-  displayedColumns: string[] = ['autor', 'fecha', 'comentario', 'informacion'];
+  displayedColumns: string[] = [];
+  screenWidth: number = window.screen.height;
+  isMobile: boolean = this.screenWidth < 768 ? true : false;
   parameters: HttpParams = new HttpParams();
   dataSource;
   resultsLength = 0
@@ -34,6 +36,15 @@ export class AboutUsComponent implements OnInit {
   constructor(private http: HttpClient) { }
   
   ngOnInit() {
+    console.log(this.screenWidth);
+    console.log(this.isMobile);
+
+    if(this.isMobile){
+      this.displayedColumns = ['autor', 'fecha', 'informacion'];
+    } else {
+      this.displayedColumns = ['autor', 'fecha', 'comentario', 'informacion'];
+    }
+
     this.searchCommits();
   }
 
