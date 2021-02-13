@@ -2,7 +2,7 @@ import { Article, CONSTANTS } from "./constants";
 
 export class ARTICLES {
   static readonly articuloPiePagina: Article = new Article('Javier Lapuente', 'Guia de Word 01', 'Como citar a pie de pagina', 'Sat Feb 13 2021 12:19:12',
-    '<p>Para la asignatura de <u>Teorías Filosóficas de la Ciudadanía</u> se nos ha pedido que aprendamos a citar a pie de página debido a los trabajos monográficos' +
+    '<p>Para la asignatura de <u>Teorías Filosóficas de la Ciudadanía</u> se nos ha pedido aprender a citar a pie de página debido a los trabajos monográficos ' +
     'con los que se acreditará que hemos leido los textos obligatorios.<br>' +
     "En esta guia por un lado mostraré como insertar notas a pie de pagina en Word usando la herramienta <i>Referencias</i> y mostraré el formato para dichas citas" +
     '</p><div class="videoContainer"><iframe width="100%" height="auto" src="https://www.youtube.com/embed/tmm1o2x2wVA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>' +
