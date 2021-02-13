@@ -1,1 +1,31 @@
-Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> <br> Labore sapiente, aspernatur quaerat ipsum iure veritatis sequi expedita aut sit quo corporis minima suscipit voluptates sint molestiae molestias culpa unde veniam.
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<div class="container mobile">
+  <div class="row">
+    <div id="demo" class="carousel slide" data-ride="carousel">
+
+      <!-- Indicators -->
+      <ul class="carousel-indicators">
+        <li data-target="#demo" data-slide-to="0" class="active"></li>
+        <li data-target="#demo" data-slide-to="1"></li>
+      </ul>
+
+      <!-- The slideshow -->
+      <div class="carousel-inner">
+        <div *ngFor="let image of mySlideImages;let i = index"
+          [ngClass]="(i == 0)?'carousel-item active':'carousel-item'">
+          <img class="img-fluid" src={{image}} alt="Los Angeles">
+        </div>
+      </div>
+
+      <!-- Left and right controls -->
+      <a class="carousel-control-prev" href="#demo" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </a>
+      <a class="carousel-control-next" href="#demo" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </a>
+
+    </div>
+  </div>
+</div>

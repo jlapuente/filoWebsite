@@ -56,6 +56,11 @@ export class CONSTANTS {
       ]
     },
   ];
+  static readonly assetsFolder: string = 'src/assets';
+  static readonly mainFolder: string = '../..';
+  static readonly carousselFolder: string = '/assets/img/caroussel/';
+  static readonly videoFolder: string = '/assets/videos/';
+  static readonly GALERY_IMAGES: string[] = [CONSTANTS.mainFolder + CONSTANTS.carousselFolder + 'day_dreaming.svg', CONSTANTS.mainFolder + CONSTANTS.carousselFolder + 'girls_and_tree.svg',];
 }
 
 export interface InfoNode {
@@ -101,5 +106,21 @@ export class Commit {
       this.comentario = descripcion;
     }
     this.detalle = descripcion;
+  }
+}
+export class Article {
+  id: string;
+  autor: string;
+  title: string;
+  subtitle: string;
+  date: Date;
+  body: string;
+  constructor(autor, title, subtitle, date, body, id){
+    this.autor = autor;
+    this.title = title;
+    this.subtitle = subtitle;
+    this.date= date;
+    this.body = body;
+    this.id = id;
   }
 }

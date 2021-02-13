@@ -1,0 +1,31 @@
+p{
+  text-align: left;
+}
+.body {
+  text-align: justify;
+}
+.subtitle{
+  color: #5A5A5A;
+  text-align: start;
+}
+.header {
+  margin-top: 2%;
+}
+:host ::ng-deep .videoContainer {
+  display: block;
+  margin: auto;
+  width: 80%;
+  height: 80%;
+}
+@media screen and (max-width: 768px) {
+  :host ::ng-deep .videoContainer {
+   height: 100%;
+   width: 100%;
+  }
+}
+h3{
+  font-size: 1.5rem;
+}
+h5{
+  font-size: 1rem;
+}

@@ -16,7 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTreeModule } from '@angular/material/tree'; 
 import { MatIconModule } from '@angular/material/icon'; 
 import { MatSliderModule } from '@angular/material/slider';
-import { MatButtonModule, MatListModule, MatPaginatorModule, MatTableModule } from '@angular/material';
+import { MatButtonModule, MatListModule, MatPaginatorModule, MatSelectModule, MatTableModule } from '@angular/material';
 import { OrganizationComponent } from './organization/organization.component';
 import { MatTabsModule } from '@angular/material/tabs'; 
 import { MatToolbarModule } from '@angular/material/toolbar'; 
@@ -24,7 +24,10 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatCardModule } from '@angular/material/card'; 
 import { HttpClientModule } from '@angular/common/http';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { ScheduleComponent } from './schedule/schedule.component'; 
+import { ScheduleComponent } from './schedule/schedule.component';
+import { ArticlesComponent } from './articles/articles.component';
+import { SanitizeHtml } from './pipes/html-sanitizer.pipe'; 
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -39,7 +42,9 @@ import { ScheduleComponent } from './schedule/schedule.component';
     InfoComponent,
     TeachersComponent,
     OrganizationComponent,
-    ScheduleComponent
+    ScheduleComponent,
+    ArticlesComponent,
+    SanitizeHtml
   ],
   imports: [
     BrowserModule,
@@ -57,7 +62,9 @@ import { ScheduleComponent } from './schedule/schedule.component';
     MatTableModule,
     MatPaginatorModule,
     MatTooltipModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSelectModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

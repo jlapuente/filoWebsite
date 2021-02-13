@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { ArticlesComponent } from './articles/articles.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { HomeComponent } from './home/home.component';
 import { InfoComponent } from './info/info.component';
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'stats', component: StatsComponent},
   { path: 'info', component: InfoComponent},
   { path: 'teachers', component: TeachersComponent},
+  { path: 'articles', component: ArticlesComponent},
   { path: '**', pathMatch: 'full', redirectTo: 'home' }
 
 ];
