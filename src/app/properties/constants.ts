@@ -100,8 +100,8 @@ export class Commit {
   constructor(autor, fecha, descripcion: string){
     this.autor = autor;
     this.fecha = fecha;
-    if(descripcion.length > 30){
-      this.comentario = descripcion.substr(0, 80) + "...";
+    if(descripcion.length > 50){
+      this.comentario = descripcion.substr(0, 50).trim() + "...";
     } else {
       this.comentario = descripcion;
     }

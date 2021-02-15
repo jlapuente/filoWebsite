@@ -1,13 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 import { animate, state, style, transition, trigger } from '@angular/animations';
-
-import { Observable } from 'rxjs';
-import { catchError } from 'rxjs/operators';
 import { Commit } from '../properties/constants';
 import { MatPaginator, MatTableDataSource } from '@angular/material';
+
+import { faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+
 
 @Component({
   selector: 'app-about-us',
@@ -22,7 +22,7 @@ import { MatPaginator, MatTableDataSource } from '@angular/material';
   ]
 })
 export class AboutUsComponent implements OnInit {
-  
+
   gitHubApi: string = 'https://api.github.com/repos/jlapuente/filoWebsite/commits';
   commitList: Commit[] = [];
   displayedColumns: string[] = [];
@@ -31,15 +31,17 @@ export class AboutUsComponent implements OnInit {
   parameters: HttpParams = new HttpParams();
   dataSource;
   resultsLength = 0
-  @ViewChild(MatPaginator, null) paginator: MatPaginator;
-  
-  constructor(private http: HttpClient) { }
-  
-  ngOnInit() {
-    console.log(this.screenWidth);
-    console.log(this.isMobile);
 
-    if(this.isMobile){
+  faTwitter = faTwitter;
+  faGithub = faGithub;
+
+  @ViewChild(MatPaginator, null) paginator: MatPaginator;
+
+  constructor(private http: HttpClient) { }
+
+  ngOnInit() {
+
+    if (this.isMobile) {
       this.displayedColumns = ['autor', 'fecha', 'informacion'];
     } else {
       this.displayedColumns = ['autor', 'fecha', 'comentario', 'informacion'];
@@ -55,7 +57,6 @@ export class AboutUsComponent implements OnInit {
 
     return this.http.get<any[]>(this.gitHubApi, options).subscribe(data => {
       data.forEach(element => {
-        console.log(element);
         this.commitList.push(new Commit(element.commit.committer.name, element.commit.author.date, element.commit.message));
       });
       this.dataSource = new MatTableDataSource(this.commitList);
