@@ -7,12 +7,12 @@
     </mat-card-header>
     <div mat-card-image></div>
     <mat-card-content>
-      <p>
-       {{card.body}}
-      </p>
+      <span [innerHTML]='card.body | sanitizeHtml'>
+      </span>
     </mat-card-content>
     <mat-card-actions>
       <!-- <button mat-button>{{card.link}}</button> -->
       <a class="mat-button" style="color:var(--accent-color)" href={{card.link.href}} download="">{{card.link.text}}</a>
     </mat-card-actions>
   </mat-card>
+</div>
