@@ -12,11 +12,13 @@ export class CONSTANTS {
   static readonly FIVE_ESCALE = 5;
   static readonly TREE_DATA: InfoNode[] = [
     {
-      name: 'Segundo Cuatrimetre',
+      name: 'Segundo Cuatrimestre',
       children: [
-        { name: 'Apple' },
-        { name: 'Banana' },
-        { name: 'Fruit loops' },
+        {
+          name: 'Filosofía de la Imagen', children: [
+            { name: 'Drive', link: 'https://drive.google.com/drive/folders/1gggZWEe6uJDTnqiu4CKV11A3j4SiLUiX' }
+          ]
+        },
       ]
     }, {
       name: 'Primer Cuatrimestre',
@@ -97,10 +99,10 @@ export class Commit {
   fecha: Date;
   comentario: string;
   detalle: string;
-  constructor(autor, fecha, descripcion: string){
+  constructor(autor, fecha, descripcion: string) {
     this.autor = autor;
     this.fecha = fecha;
-    if(descripcion.length > 50){
+    if (descripcion.length > 50) {
       this.comentario = descripcion.substr(0, 50).trim() + "...";
     } else {
       this.comentario = descripcion;
@@ -115,11 +117,11 @@ export class Article {
   subtitle: string;
   date: Date;
   body: string;
-  constructor(autor, title, subtitle, date, body, id){
+  constructor(autor, title, subtitle, date, body, id) {
     this.autor = autor;
     this.title = title;
     this.subtitle = subtitle;
-    this.date= date;
+    this.date = date;
     this.body = body;
     this.id = id;
   }
