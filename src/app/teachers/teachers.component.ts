@@ -10,7 +10,7 @@ export class TeachersComponent implements OnInit {
 
   cards: Card[] = [];
   constructor() { }
-
+  defaultUrl: string = "https://i.pinimg.com/originals/0c/3b/3a/0c3b3adb1a7530892e55ef36d3be6cb8.png";
   ngOnInit() {
     let card: Card = new Card('https://www.catarata.org/media/catarata55/images/thumbs/author-79539-130x190.jpg', 'José Luis López de Lizaga', 'Profesor de Teorias Éticas', '<ul class="list-group"> <li class="list-group-item"> Email:  lizaga@unizar.es  </li> <li class="list-group-item"> Forma de Aprobar: Examen final (Necesario aprobar las tres partes) </li> <li class="list-group-item"> Fecha Fin Asignatura: 07/06/2021 </li></ul>', new Link('PROGRAMA Teorías Éticas 20-21.pdf', '../../assets/docs/programas/PROGRAMA Teorías Éticas 20-21.pdf'));
     this.cards.push(card)
@@ -23,5 +23,8 @@ export class TeachersComponent implements OnInit {
     card = new Card('https://www.ucm.es/data/cont/media/www/pag-109213/victoria%20p%C3%A9rez%20royo%20copia%20(1).jpg', 'Victoria Perez Royo', 'Profesora de Filosofía de la Imagen', '<ul class="list-group"> <li class="list-group-item"> Email:  victoriaperezroyo@gmail.com  </li><li class="list-group-item"> Textos:  <a href="https://docs.google.com/document/d/18WFTwRqRDORzW4jJ0zmeU6lSEWVK376wRNc56FBFz6Y/edit"> https://drive.google.com/drive/folders/1gggZWEe6uJDTnqiu4CKV11A3j4SiLUiX </a> </li><li class="list-group-item"> Drive:  <a href="https://drive.google.com/drive/folders/1gggZWEe6uJDTnqiu4CKV11A3j4SiLUiX"> https://docs.google.com/document/d/18WFTwRqRDORzW4jJ0zmeU6lSEWVK376wRNc56FBFz6Y/edit </a> </li>  <li class="list-group-item"> Forma de Aprobar: Trabajo de dos obras </li> <li class="list-group-item"> Fecha Fin Asignatura: 02/06/2021 </li></ul>', new Link('Programa de la asignatura.pdf', '../../assets/docs/programas/Programa de la asignatura.pdf'));
     this.cards.push(card)
   }
-
+  updateUrl(event){
+    console.log(event);
+    event.target.src = this.defaultUrl;
+  }
 }

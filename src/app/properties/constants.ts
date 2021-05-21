@@ -34,14 +34,14 @@ export class CONSTANTS {
                 { name: 'Moodle', link: 'https://moodle.unizar.es/add/course/view.php?id=37372' },
               ]
             },
-            {
-              name: 'Brussels sprouts',
-              children: [
-                { name: 'Pagina de la universidad', link: 'https://filosofia.unizar.es/ipf-0' },
-                { name: 'Temas Redactados', link: '../../assets/docs/Temas.zip' },
-                { name: 'Moodle', link: 'https://moodle.unizar.es/add/course/view.php?id=37372' },
-              ]
-            },
+            // {
+            //   name: 'Brussels sprouts',
+            //   children: [
+            //     { name: 'Pagina de la universidad', link: 'https://filosofia.unizar.es/ipf-0' },
+            //     { name: 'Temas Redactados', link: '../../assets/docs/Temas.zip' },
+            //     { name: 'Moodle', link: 'https://moodle.unizar.es/add/course/view.php?id=37372' },
+            //   ]
+            // },
           ]
         }
       ]
