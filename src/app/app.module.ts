@@ -18,7 +18,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatButtonModule, MatListModule, MatMenuModule, MatPaginatorModule, MatSelectModule, MatTableModule } from '@angular/material';
 import { OrganizationComponent } from './organization/organization.component';
-import { MatTabsModule } from '@angular/material/tabs'; 
 import { MatToolbarModule } from '@angular/material/toolbar'; 
 import { MatSidenavModule } from '@angular/material/sidenav'; 
 import { MatCardModule } from '@angular/material/card'; 
@@ -29,7 +28,7 @@ import { ArticlesComponent } from './articles/articles.component';
 import { SanitizeHtml } from './pipes/html-sanitizer.pipe'; 
 import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   declarations: [

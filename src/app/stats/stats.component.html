@@ -1,40 +1,105 @@
 <script src="../../../node_modules/chart.js/dist/Chart.js"></script>
- <div class="container mobile">
-  <div class="row">
-    <div class="col-sm-12 col-md-6">
-      <div class="row graphTittle">
-        <span class="tittle">Notas finales de I.P.F</span>
+<script src="../../../node_modules/chartjs-plugin-datalabels/dist/chartjs-plugin-datalabels.min.js"></script>
+<mat-tab-group mat-align-tabs="center" (selectedTabChange)="cargarTrimestre($event.index)">
+  <mat-tab label="Primer Cuatrimestre">
+    <!-- {{cargarTrimestre(0)}} -->
+    <div class="container mobile">
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <div class="row graphTittle">
+            <span class="tittle">I.P.F</span>
+          </div>
+          <canvas id="ipfChart" height="200"></canvas>
+        </div>
+        <div class="col-sm-12 col-md-6">
+          <div class="row graphTittle">
+            <span class="tittle">Política</span>
+          </div>
+          <canvas id="politicsChart" height="200"></canvas>
+        </div>
       </div>
-      <canvas id="ipfChart" height="200"></canvas>
-    </div>
-    <div class="col-sm-12 col-md-6">
-      <div class="row graphTittle">
-        <span class="tittle">Notas finales de Política</span>
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <div class="row graphTittle">
+            <span class="tittle">Lógica</span>
+          </div>
+          <canvas id="logicChart" height="200"></canvas>
+        </div>
+        <div class="col-sm-12 col-md-6">
+          <div class="row graphTittle">
+            <span class="tittle">Antropología</span>
+          </div>
+          <canvas id="antropologyChart" height="200"></canvas>
+        </div>
       </div>
-      <canvas id="politicsChart" height="200"></canvas>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-12 col-md-6">
-      <div class="row graphTittle">
-        <span class="tittle">Notas finales de Lógica</span>
+      <div class="row">
+        <div class="col-sm-0 col-md-3"></div>
+        <div class="col-sm-12 col-md-6">
+          <div class="row graphTittle">
+            <span class="tittle">Epistemología</span>
+          </div>
+          <canvas id="epistemologyChart" height="200"></canvas>
+        </div>
       </div>
-      <canvas id="logicChart" height="200"></canvas>
     </div>
-    <div class="col-sm-12 col-md-6">
-      <div class="row graphTittle">
-        <span class="tittle">Notas finales de Antropología</span>
+  </mat-tab>
+  <mat-tab label="Segundo Trimestre">
+    <div class="container mobile">
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <div class="row graphTittle">
+            <span class="tittle">Pensamiento feminista</span>
+          </div>
+          <canvas id="feminismChart" height="200"></canvas>
+        </div>
+        <div class="col-sm-12 col-md-6">
+          <div class="row graphTittle">
+            <span class="tittle">Filosofía de la Cultura</span>
+          </div>
+          <canvas id="cultureChart" height="200"></canvas>
+        </div>
       </div>
-      <canvas id="antropologyChart" height="200"></canvas>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-0 col-md-3"></div>
-    <div class="col-sm-12 col-md-6">
-      <div class="row graphTittle">
-        <span class="tittle">Notas finales de Epistemología</span>
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <div class="row graphTittle">
+            <span class="tittle">Filosofía de la Imagen</span>
+          </div>
+          <canvas id="imagenChart" height="200"></canvas>
+        </div>
+        <div class="col-sm-12 col-md-6">
+          <div class="row graphTittle">
+            <span class="tittle">Filosofía de la Ciudadania</span>
+          </div>
+          <canvas id="citizenshipChart" height="200"></canvas>
+        </div>
       </div>
-      <canvas id="epistemologyChart" height="200"></canvas>
+      <div class="row">
+        <div class="col-sm-0 col-md-3"></div>
+        <div class="col-sm-12 col-md-6">
+          <div class="row graphTittle">
+            <span class="tittle">Teorías Éticas</span>
+          </div>
+          <canvas id="ethicsChart" height="200"></canvas>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
+  </mat-tab>
+  <mat-tab label="Otros datos">
+    <div class="container mobile">
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <div class="row graphTittle">
+            <span class="tittle">Suspensos por asignatura</span>
+          </div>
+          <canvas id="failedChart" height="200"></canvas>
+        </div>
+        <div class="col-sm-12 col-md-6">
+          <div class="row graphTittle">
+            <span class="tittle">Aprobados por asignatura</span>
+          </div>
+          <canvas id="passedChart" height="200"></canvas>
+        </div>
+      </div>
+    </div>
+  </mat-tab>
+</mat-tab-group>
