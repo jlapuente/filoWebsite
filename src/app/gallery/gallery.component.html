@@ -1,31 +1,25 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<div class="container mobile">
-  <div class="row">
-    <div id="demo" class="carousel slide" data-ride="carousel">
-
-      <!-- Indicators -->
-      <ul class="carousel-indicators">
-        <li data-target="#demo" data-slide-to="0" class="active"></li>
-        <li data-target="#demo" data-slide-to="1"></li>
-      </ul>
-
-      <!-- The slideshow -->
-      <div class="carousel-inner">
-        <div *ngFor="let image of mySlideImages;let i = index"
-          [ngClass]="(i == 0)?'carousel-item active':'carousel-item'">
-          <img class="img-fluid" src={{image}} alt="Los Angeles">
-        </div>
-      </div>
-
-      <!-- Left and right controls -->
-      <a class="carousel-control-prev" href="#demo" data-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-      </a>
-      <a class="carousel-control-next" href="#demo" data-slide="next">
-        <span class="carousel-control-next-icon"></span>
-      </a>
-
+<div class="container">
+<h1 style="text-align: center;">Apartado en proceso</h1>
+  <section class="gallery">
+    <div class="gallery__item">
+      <input type="radio" id="img-1" checked name="gallery" class="gallery__selector" />
+      <img class="gallery__img" src="../../assets/img/gallery/WhatsApp Image 2021-10-07 at 23.57.52.jpeg" alt="" />
+      <label for="img-1" class="gallery__thumb"><img src="../../assets/img/gallery/WhatsApp Image 2021-10-07 at 23.57.52.jpeg" alt="" /></label>
     </div>
-  </div>
+    <div class="gallery__item">
+      <input type="radio" id="img-2" name="gallery" class="gallery__selector" />
+      <img class="gallery__img" src="../../assets/img/gallery/WhatsApp Image 2021-10-07 at 23.57.53.jpeg" alt="" />
+      <label for="img-2" class="gallery__thumb"><img src="../../assets/img/gallery/WhatsApp Image 2021-10-07 at 23.57.53.jpeg" alt="" /></label>
+    </div>
+    <div class="gallery__item">
+      <input type="radio" id="img-3" name="gallery" class="gallery__selector" />
+      <img class="gallery__img" src="../../assets/img/gallery/WhatsApp Image 2021-10-07 at 23.57.53 (1).jpeg" alt="" />
+      <label for="img-3" class="gallery__thumb"><img src="../../assets/img/gallery/WhatsApp Image 2021-10-07 at 23.57.53 (1).jpeg" alt="" /></label>
+    </div>
+    <div class="gallery__item">
+      <input type="radio" id="img-4" name="gallery" class="gallery__selector" />
+      <img class="gallery__img" src="../../assets/img/gallery/WhatsApp Image 2021-10-07 at 23.57.53 (2).jpeg" alt="" />
+      <label for="img-4" class="gallery__thumb"><img src="../../assets/img/gallery/WhatsApp Image 2021-10-07 at 23.57.53 (2).jpeg" alt="" /></label>
+    </div>
+  </section>
 </div>

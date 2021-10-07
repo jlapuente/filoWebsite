@@ -13,7 +13,7 @@ import { TrelloComponent } from './trello/trello.component';
 
 const routes: Routes = [
   { path: 'gallery', component: GalleryComponent },
-  {path: 'home', component: HomeComponent},
+  { path: 'home', component: HomeComponent},
   { path: 'about-us', component: AboutUsComponent},
   { path: 'organization', component: OrganizationComponent},
   { path: 'stats', component: StatsComponent},

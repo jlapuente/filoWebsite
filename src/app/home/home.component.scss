@@ -1,1 +1,88 @@
 
+h1,
+h2,
+h3 {
+  text-align: center;
+}
+
+li {
+  color: #2c3e50;
+  font-size: 18px;
+  line-height: 30px;
+  text-align: justify;
+  letter-spacing: 1px;
+}
+
+/*SG = style grid*/
+.SG {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.SG .sgLi {
+  min-width: 24%;
+  display: inline-flex;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+}
+
+.SG .sgLi:hover {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, .15);
+}
+
+.SG .box {
+  width: 100%;
+  height: 100vh;
+  background: #fff;
+  min-height: 200px;
+  max-height: 220px;
+  box-sizing: border-box;
+}
+
+/*Styles */
+.df {
+  list-style-type: disc;
+}
+
+.s18 li:before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  background: url(//goo.gl/lcPSVD);
+  background-position: 50%;
+}
+
+.s19 {
+  list-style: none;
+}
+
+.s19 li:before {
+  content: '\f0a9';
+  margin-right: 15px;
+}
+
+/* responsive grid*/
+@media (max-width: 970px) {
+  .SG .sgLi {
+    width: 180px;
+  }
+}
+
+@media (max-width: 425px) {
+  .SG .sgLi {
+    width: 100%;
+  }
+}
+.contenedor{
+  width:100%;
+  height: 100%;
+}
+.row {
+  margin: 0;
+  height: 100%;
+}
+
+.white-bg{
+  background-color: white;
+}
