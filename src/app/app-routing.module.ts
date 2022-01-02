@@ -8,6 +8,7 @@ import { InfoComponent } from './info/info.component';
 import { OrganizationComponent } from './organization/organization.component';
 import { StatsComponent } from './stats/stats.component';
 import { TeachersComponent } from './teachers/teachers.component';
+import { TimelineComponent } from './timeline/timeline.component';
 import { TrelloComponent } from './trello/trello.component';
 
 
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'info', component: InfoComponent},
   { path: 'teachers', component: TeachersComponent},
   { path: 'articles', component: ArticlesComponent},
+  { path: 'timeline', component: TimelineComponent},
   { path: '**', pathMatch: 'full', redirectTo: 'home' }
 
 ];

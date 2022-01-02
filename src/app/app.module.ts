@@ -29,6 +29,7 @@ import { SanitizeHtml } from './pipes/html-sanitizer.pipe';
 import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatTabsModule } from '@angular/material/tabs';
+import { TimelineComponent } from './timeline/timeline.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { MatTabsModule } from '@angular/material/tabs';
     OrganizationComponent,
     ScheduleComponent,
     ArticlesComponent,
-    SanitizeHtml
+    SanitizeHtml,
+    TimelineComponent
   ],
   imports: [
     BrowserModule,
