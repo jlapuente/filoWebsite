@@ -3,94 +3,23 @@
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
-<div class="container">
+<div class="container" *ngIf="selected == timelines[1].id">
   <div class="page-header">
     <h1 id="timeline">Linea de tiempo del mundo antiguo</h1>
   </div>
   <ul class="timeline">
-    <li>
-      <div class="timeline-badge success"><i class="glyphicon glyphicon-user"></i></div>
-      <div class="timeline-panel">
-        <div class="timeline-heading">
-          <h4 class="timeline-title">Tales de Mileto</h4>
-          <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 624 a. C.- 546 a. C.</small></p>
+      <li *ngFor="let item of timelines[selected].items" [ngClass]="{'timeline-inverted': item.inverted}">
+        <div class="timeline-badge success"><i class="glyphicon glyphicon-user"></i></div>
+        <div class="timeline-panel">
+          <div class="timeline-heading">
+            <h4 class="timeline-title">{{item.title}}</h4>
+            <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> {{item.date}} </small></p>
+          </div>
+          <div class="timeline-body">
+            <p [innerHTML]="item.body"></p>
+          </div>
         </div>
-        <div class="timeline-body">
-          <p>Antes de Tales las explicaciones del mundo venian regidas por los mitos y las religiones. Tales fue de los
-            primeros pensadores que en base a la observación lograrón encontrar una explicación distinta de los
-            fenomenos que ocurrian a su alrededor.
-            Tales fue un filosofo monista, es decir, creia que habia una esencia unica de la que venia todo lo demas,
-            una esencia primordial. En su caso, esa esencia principal era el agua ya que era esencial para la vida. La
-            importancia de Tales no reside en eso sino en que es el primer
-            autor reconocido en buscar una explicación naturalista y racional del mundo.
-          </p>
-        </div>
-      </div>
-    </li>
-    <li class="timeline-inverted">
-      <div class="timeline-badge warning"><i class="glyphicon glyphicon-user"></i></div>
-      <div class="timeline-panel">
-        <div class="timeline-heading">
-          <h4 class="timeline-title">Lao Tse</h4>
-          <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> S. VI a.C.</small></p>
-        </div>
-        <div class="timeline-body">
-          <p>A diferencia de la filosofia griega, la filosofia china no nació del cosmos o de la observacion de la naturaleza sino de la politica y por eso se centrará mas en la moralidad y la ética. Una de las ideas mas importantes de la epoca procede del Tao Te Ching (El camino y su poder), atribuido a Lao Tsé. Fue uno de los primeros intentos de proponer una teoria de gobierno justo basada en el te (virtud) y que era posible encontrar si seguia el tao (el camino), que sentó las bases de la filosofia conocida como taoismo.
-          </p>
-        </div>
-      </div>
-    </li>
-    <li>
-      <div class="timeline-badge success"><i class="glyphicon glyphicon-user"></i></div>
-      <div class="timeline-panel">
-        <div class="timeline-heading">
-          <h4 class="timeline-title">Platón</h4>
-          <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 387 a. C.- 347 a. C.</small></p>
-        </div>
-        <div class="timeline-body">
-          <p>Platón desarrolló sus doctrinas filosóficas mediante mitos y alegorías. En su "teoría de las formas" o
-            "ideas", sostuvo
-            que el mundo sensible es solo una "sombra" de otro más real, perfecto e inmutable del cual provienen los
-            conceptos
-            universales que estructuran la realidad a partir de la "Idea del Bien"; y el alma humana, la cual es
-            inmortal pero esta
-            se encuentra "encarcelada" en el cuerpo. Según su "teoría de la reminiscencia", las ideas son innatas en el
-            alma y
-            "recordadas" por la razón (anamnesis). Platón también es considerado como uno de los fundadores de la
-            filosofía política
-            al considerar que la ciudad justa estaría gobernada por "filósofos reyes". Intentó también plasmar en un
-            Estado real su
-            original teoría política, razón por la cual viajó dos veces a Siracusa, Sicilia, con intenciones de poner en
-            práctica
-            allí su proyecto, pero fracasó en ambas ocasiones y logró escapar penosamente y corriendo peligro su vida
-            debido a las
-            persecuciones que sufrió por parte de sus opositores.​ De Platón también recibimos los conceptos de “amor
-            platónico” y
-            "sólidos platónicos".</p>
-        </div>
-      </div>
-    </li>
-    <li class="timeline-inverted">
-      <div class="timeline-badge warning"><i class="glyphicon glyphicon-credit-card"></i></div>
-      <div class="timeline-panel">
-        <div class="timeline-heading">
-          <h4 class="timeline-title">Jesucristo</h4>
-          <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> Año 0</small></p>
-        </div>
-        <div class="timeline-body">
-          <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris,
-            paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé
-            pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num
-            significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.
-          </p>
-          <p>Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis. Interagi no mé, cursus
-            quis, vehicula ac nisi. Aenean vel dui dui. Nullam leo erat, aliquet quis tempus a, posuere ut mi. Ut
-            scelerisque neque et turpis posuere pulvinar pellentesque nibh ullamcorper. Pharetra in mattis molestie,
-            volutpat elementum justo. Aenean ut ante turpis. Pellentesque laoreet mé vel lectus scelerisque interdum
-            cursus velit auctor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac mauris lectus, non
-            scelerisque augue. Aenean justo massa.</p>
-        </div>
-      </div>
-    </li>
+      </li>
   </ul>
 </div>
+
