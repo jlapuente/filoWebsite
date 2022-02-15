@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ArticlesComponent } from './articles/articles.component';
 import { GalleryComponent } from './gallery/gallery.component';
+import { GraphsComponent } from './graphs/graphs.component';
 import { HomeComponent } from './home/home.component';
 import { InfoComponent } from './info/info.component';
 import { OrganizationComponent } from './organization/organization.component';
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'teachers', component: TeachersComponent},
   { path: 'articles', component: ArticlesComponent},
   { path: 'timeline', component: TimelineComponent},
+  { path: 'graphs', component: GraphsComponent},
   { path: '**', pathMatch: 'full', redirectTo: 'home' }
 
 ];

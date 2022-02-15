@@ -30,6 +30,7 @@ import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatTabsModule } from '@angular/material/tabs';
 import { TimelineComponent } from './timeline/timeline.component';
+import { GraphsComponent } from './graphs/graphs.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { TimelineComponent } from './timeline/timeline.component';
     ScheduleComponent,
     ArticlesComponent,
     SanitizeHtml,
-    TimelineComponent
+    TimelineComponent,
+    GraphsComponent
   ],
   imports: [
     BrowserModule,
