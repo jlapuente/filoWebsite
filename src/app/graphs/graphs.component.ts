@@ -27,27 +27,11 @@ export class GraphsComponent implements OnInit {
 
   searchList: any[] = [];
   terms: [] = [];
-  numberOfTerms: number[] = [0,1,2,3];
+  numberOfTerms: number[] = [0, 1, 2, 3];
   selectedTerm: number = 0;
   chart: any;
   ctx: any;
   selectedGraph;
-
-  pieOptions = {
-    legend: false,
-    plugins: {
-      datalabels: {
-        color: '#FFFFFF',
-        // formatter: function (value, context) {
-        //   return context.chart.data.labels[context.dataIndex] + ': ' + value;
-        // },
-        clamp: true,
-        anchor: 'center',
-        // rotation: 90,
-        position: 'outside',
-      }
-    }
-  };
 
   ngOnInit() {
     this.prepareLabels();
@@ -57,31 +41,60 @@ export class GraphsComponent implements OnInit {
     term.push(introducionPoliticaMarks);
     term.push(antropologiaMarks);
     term.push(introducionLogicaMarks);
-    this.searchList.push(term);
-    term = [];
     term.push(culturaMarks);
     term.push(feminismoMarks);
     term.push(ciudadaniaMarks);
     term.push(eticaMarks);
     term.push(imagenMarks);
     this.searchList.push(term);
+    term = [];
+    this.searchList.push(term);
 
     console.log(this.searchList);
-    console.log(this.searchList[0]);
     this.selectedGraph = this.searchList[0][0];
     this.marks = this.selectedGraph.items;
-    this.calculateMarks([], this.marks, document.getElementById('chart'), CONSTANTS.TEN_ESCALE);
+
+    // Declaramos el this como una variable externa para acceder desde dentro de la funcion, de lo contrario llamariamos a un supuesto this que referencia a la funcion
+    var $this = this;
+    var checkExist = setInterval(function () {
+      if (document.getElementById('chart')) {
+        clearInterval(checkExist);
+        $this.calculateMarks($this.marks, CONSTANTS.TEN_ESCALE);
+      }
+    }, 100);
   }
 
-  updateSearch(event){
-    console.log(event);
+  updateSearch() {
     this.marks = this.selectedGraph.items;
-    this.calculateMarks([], this.marks, document.getElementById('chart'), CONSTANTS.TEN_ESCALE);
+    this.calculateMarks(this.marks, CONSTANTS.TEN_ESCALE);
   }
 
-  prepareGraph(values, markLabel, canva, escale) {
+  calculateMarks(marks, escale) {
+    let emptyArray = [];
+    if (emptyArray.length == 0) {
+      for (let index = 0; index < marks.length; index++) {
+        emptyArray.push(this.getOccurrence(marks, index));
+      }
+      console.log("En la asignatura: " + " hay: " + marks.length + " alumnos");
+    }
+    this.prepareGraph(emptyArray, this.labels, escale, document.getElementById('chart'));
+  }
+
+  prepareLabels() {
+    for (let index = 0; index <= 10; index++) {
+      this.labels.push(index);
+    }
+  }
+
+  getOccurrence(array, value) {
+    var count = 0;
+    array.forEach((v) => (v === value && count++));
+    return count;
+  }
+
+  prepareGraph(values, markLabel, escale, canva) {
     var ctx = canva.getContext('2d');
-    if(this.chart != undefined){
+    if (this.chart != undefined) {
       this.chart.destroy();
     }
     this.chart = new Chart(ctx, {
@@ -116,28 +129,4 @@ export class GraphsComponent implements OnInit {
     });
     this.chart.update();
   }
-
-  calculateMarks(emptyArray, marks, chart, escale) {
-    if (emptyArray.length == 0) {
-      for (let index = 0; index < marks.length; index++) {
-        emptyArray.push(this.getOccurrence(marks, index));
-      }
-      console.log("En la asignatura: " + chart.id + " hay: " + marks.length + " alumnos");
-    }
-    this.prepareGraph(emptyArray, this.labels, chart, escale);
-
-  }
-
-  prepareLabels() {
-    for (let index = 0; index <= 10; index++) {
-      this.labels.push(index);
-    }
-  }
-
-  getOccurrence(array, value) {
-    var count = 0;
-    array.forEach((v) => (v === value && count++));
-    return count;
-  }
-
 }

@@ -1,35 +1,76 @@
 <script src="../../../node_modules/chart.js/dist/Chart.js"></script>
 <script src="../../../node_modules/chartjs-plugin-datalabels/dist/chartjs-plugin-datalabels.min.js"></script>
-<!-- {{cargarTrimestre(0)}} -->
-<div class="container mobile">
-  <div class="row">
-    <div class="col-sm-9 col-md-3"></div>
-    <div class="col-sm-12 col-md-6">
-      <div class="row filters">
+<mat-tab-group mat-align-tabs="center">
+  <mat-tab label="Graficos">
+    <div class="container mobile">
+      <div class="row">
+        <div class="col-sm-9 col-md-3"></div>
         <div class="col-sm-12 col-md-6">
-          <mat-form-field class="mat-filter" appearance="outline">
-            <mat-label>Asignatura:</mat-label>
-            <mat-select (selectionChange)="updateSearch()" [(value)]="selectedGraph">
-              <mat-option></mat-option>
-              <mat-option [value]="option" *ngFor="let option of searchList[selectedTerm]">{{ option.tittle }}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
-        <div class="col-sm-12 col-md-6">
-          <mat-form-field class="mat-filter" appearance="outline">
-            <mat-label>Trimestre:</mat-label>
-            <mat-select [(value)]="selectedTerm">
-              <mat-option></mat-option>
-              <mat-option [value]="number" *ngFor="let number of numberOfTerms">{{number+1}}</mat-option>
-            </mat-select>
-          </mat-form-field>
+          <div class="row filters">
+            <div class="col-sm-12 col-md-6">
+              <mat-form-field class="mat-filter" appearance="outline">
+                <mat-label>Asignatura:</mat-label>
+                <mat-select (selectionChange)="updateSearch()" [(value)]="selectedGraph">
+                  <mat-option></mat-option>
+                  <mat-option [value]="option" *ngFor="let option of searchList[selectedTerm]">{{ option.tittle }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-sm-12 col-md-6">
+              <mat-form-field class="mat-filter" appearance="outline">
+                <mat-label>Curso:</mat-label>
+                <mat-select [(value)]="selectedTerm">
+                  <mat-option></mat-option>
+                  <mat-option [value]="number" *ngFor="let number of numberOfTerms">{{number+1}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row graphTittle">
+            <span class="tittle">{{selectedGraph.tittle}} ({{selectedGraph.items.length}} alumnos)</span>
+          </div>
+          <canvas id="chart" height="200"></canvas>
         </div>
       </div>
-      <div class="row graphTittle">
-        <span class="tittle">{{selectedGraph.tittle}}</span>
-      </div>
-      <canvas id="chart" height="200"></canvas>
     </div>
-  </div>
-</div>
+  </mat-tab>
+  <mat-tab label="Otros datos">
+    <div class="container mobile">
+      <div class="row">
+        <section class="dl-blurbs">
+          <dl>
+            <dt>Suspensos</dt>
+            <dd>La asignatura con mas suspensos durante el primer curso fue <i>Teorias eticas</i> rozada por Filosofia de la Cultura
+            En cambio, las asignaturas que mas exito tuvieron entre los alumnos fueron Introduccion a los problemas Filosoficos, Epistemologia y Politica, 
+            con entre 54 y 55 aprobados.
+            </dd>
+            <dt>Matriculas</dt>
+            <dd>Durante el primer curso hubo un total de 18 matriculas de honor habiendo en todas las asignaturas del curso salvo en <i>Epistemologia</i> y 
+              <i>Antropologia</i>.
+            La asignatura del curso que mas matriculas repartio fue <i>Filosofia de la imagen</i></dd>
+            <dt>Test</dt>
+            <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus
+              ante
+              dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.</dd>
+          </dl>
+          <dl>
+            <dt>Deliver</dt>
+            <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus
+              ante
+              dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.</dd>
+            <dt>Rinse</dt>
+            <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus
+              ante
+              dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.</dd>
+
+            <dt>Repeat</dt>
+            <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus
+              ante
+              dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.</dd>
+          </dl>
+        </section>
+      </div>
+    </div>
+  </mat-tab>
+</mat-tab-group>
