@@ -5,6 +5,13 @@ import ChartDataLabels from 'chartjs-plugin-datalabels';
 import ipfMarks from '../../assets/json/marks_ipf.json';
 import epistemologyMarks from '../../assets/json/marks_epistemologia.json';
 import introducionPoliticaMarks from '../../assets/json/marks_introduccion_politica.json';
+import introducionLogicaMarks from '../../assets/json/marks_introduccion_logica.json'
+import antropologiaMarks from '../../assets/json/marks_antropologia.json'
+import culturaMarks from '../../assets/json/marks_cultura.json';
+import feminismoMarks from '../../assets/json/marks_feminismo.json';
+import ciudadaniaMarks from '../../assets/json/marks_ciudadania.json';
+import imagenMarks from '../../assets/json/marks_imagen.json';
+import eticaMarks from '../../assets/json/marks_etica.json';
 
 @Component({
   selector: 'app-graphs',
@@ -19,7 +26,9 @@ export class GraphsComponent implements OnInit {
   marks: number[] = [];
 
   searchList: any[] = [];
-
+  terms: [] = [];
+  numberOfTerms: number[] = [0,1,2,3];
+  selectedTerm: number = 0;
   chart: any;
   ctx: any;
   selectedGraph;
@@ -42,15 +51,30 @@ export class GraphsComponent implements OnInit {
 
   ngOnInit() {
     this.prepareLabels();
-    this.searchList.push(ipfMarks);
-    this.searchList.push(epistemologyMarks);
-    this.searchList.push(introducionPoliticaMarks);
-    this.selectedGraph = ipfMarks;
+    let term = [];
+    term.push(ipfMarks);
+    term.push(epistemologyMarks);
+    term.push(introducionPoliticaMarks);
+    term.push(antropologiaMarks);
+    term.push(introducionLogicaMarks);
+    this.searchList.push(term);
+    term = [];
+    term.push(culturaMarks);
+    term.push(feminismoMarks);
+    term.push(ciudadaniaMarks);
+    term.push(eticaMarks);
+    term.push(imagenMarks);
+    this.searchList.push(term);
+
+    console.log(this.searchList);
+    console.log(this.searchList[0]);
+    this.selectedGraph = this.searchList[0][0];
     this.marks = this.selectedGraph.items;
     this.calculateMarks([], this.marks, document.getElementById('chart'), CONSTANTS.TEN_ESCALE);
   }
 
-  updateSearch(){
+  updateSearch(event){
+    console.log(event);
     this.marks = this.selectedGraph.items;
     this.calculateMarks([], this.marks, document.getElementById('chart'), CONSTANTS.TEN_ESCALE);
   }

@@ -3,14 +3,29 @@
 <!-- {{cargarTrimestre(0)}} -->
 <div class="container mobile">
   <div class="row">
+    <div class="col-sm-9 col-md-3"></div>
     <div class="col-sm-12 col-md-6">
-      <mat-form-field class="mat-filter" appearance="outline">
-        <mat-label>Asignatura:</mat-label>
-        <mat-select (selectionChange)="updateSearch()" [(value)]="selectedGraph">
-          <mat-option></mat-option>
-          <mat-option [value]="option" *ngFor="let option of searchList">{{ option.tittle }}</mat-option>
-        </mat-select>
-      </mat-form-field>
+      <div class="row filters">
+        <div class="col-sm-12 col-md-6">
+          <mat-form-field class="mat-filter" appearance="outline">
+            <mat-label>Asignatura:</mat-label>
+            <mat-select (selectionChange)="updateSearch()" [(value)]="selectedGraph">
+              <mat-option></mat-option>
+              <mat-option [value]="option" *ngFor="let option of searchList[selectedTerm]">{{ option.tittle }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-sm-12 col-md-6">
+          <mat-form-field class="mat-filter" appearance="outline">
+            <mat-label>Trimestre:</mat-label>
+            <mat-select [(value)]="selectedTerm">
+              <mat-option></mat-option>
+              <mat-option [value]="number" *ngFor="let number of numberOfTerms">{{number+1}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
       <div class="row graphTittle">
         <span class="tittle">{{selectedGraph.tittle}}</span>
       </div>
