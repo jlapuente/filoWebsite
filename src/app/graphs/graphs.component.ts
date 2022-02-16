@@ -4,6 +4,7 @@ import { CONSTANTS } from '../properties/constants'
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import ipfMarks from '../../assets/json/marks_ipf.json';
 import epistemologyMarks from '../../assets/json/marks_epistemologia.json';
+import introducionPoliticaMarks from '../../assets/json/marks_introduccion_politica.json';
 
 @Component({
   selector: 'app-graphs',
@@ -43,6 +44,7 @@ export class GraphsComponent implements OnInit {
     this.prepareLabels();
     this.searchList.push(ipfMarks);
     this.searchList.push(epistemologyMarks);
+    this.searchList.push(introducionPoliticaMarks);
     this.selectedGraph = ipfMarks;
     this.marks = this.selectedGraph.items;
     this.calculateMarks([], this.marks, document.getElementById('chart'), CONSTANTS.TEN_ESCALE);
@@ -55,6 +57,9 @@ export class GraphsComponent implements OnInit {
 
   prepareGraph(values, markLabel, canva, escale) {
     var ctx = canva.getContext('2d');
+    if(this.chart != undefined){
+      this.chart.destroy();
+    }
     this.chart = new Chart(ctx, {
       type: 'bar',
       data: {
@@ -85,6 +90,7 @@ export class GraphsComponent implements OnInit {
         }
       }
     });
+    this.chart.update();
   }
 
   calculateMarks(emptyArray, marks, chart, escale) {
