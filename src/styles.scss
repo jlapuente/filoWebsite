@@ -18,3 +18,7 @@ html,body {
     --accent-color: #f4ac4c;
     --font-size: 50px;
 }
+
+.modal-backdrop {
+  z-index: auto !important;
+}

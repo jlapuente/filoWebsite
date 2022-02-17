@@ -46,6 +46,7 @@
   border: 1px solid #d4d4d4;
   border-radius: 2px;
   padding: 20px;
+  padding-bottom: 8px;
   position: relative;
   -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
@@ -181,4 +182,17 @@
     left: -14px;
     right: auto;
   }
+}
+h4 {
+  font-size: 18px
+}
+
+.authorModal {
+  z-index: 101;
+}
+
+.authorContent {
+  text-align: justify;
+  font-weight: normal;
+  font-size: 15px;
 }

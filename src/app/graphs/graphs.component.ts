@@ -2,16 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { Chart } from 'node_modules/chart.js';
 import { CONSTANTS } from '../properties/constants'
 import ChartDataLabels from 'chartjs-plugin-datalabels';
-import ipfMarks from '../../assets/json/marks_ipf.json';
-import epistemologyMarks from '../../assets/json/marks_epistemologia.json';
-import introducionPoliticaMarks from '../../assets/json/marks_introduccion_politica.json';
-import introducionLogicaMarks from '../../assets/json/marks_introduccion_logica.json'
-import antropologiaMarks from '../../assets/json/marks_antropologia.json'
-import culturaMarks from '../../assets/json/marks_cultura.json';
-import feminismoMarks from '../../assets/json/marks_feminismo.json';
-import ciudadaniaMarks from '../../assets/json/marks_ciudadania.json';
-import imagenMarks from '../../assets/json/marks_imagen.json';
-import eticaMarks from '../../assets/json/marks_etica.json';
+import ipfMarks from '../../assets/json/marks/marks_ipf.json';
+import epistemologyMarks from '../../assets/json/marks/marks_epistemologia.json';
+import introducionPoliticaMarks from '../../assets/json/marks/marks_introduccion_politica.json';
+import introducionLogicaMarks from '../../assets/json/marks/marks_introduccion_logica.json'
+import antropologiaMarks from '../../assets/json/marks/marks_antropologia.json'
+import culturaMarks from '../../assets/json/marks/marks_cultura.json';
+import feminismoMarks from '../../assets/json/marks/marks_feminismo.json';
+import ciudadaniaMarks from '../../assets/json/marks/marks_ciudadania.json';
+import imagenMarks from '../../assets/json/marks/marks_imagen.json';
+import eticaMarks from '../../assets/json/marks/marks_etica.json';
 
 @Component({
   selector: 'app-graphs',
