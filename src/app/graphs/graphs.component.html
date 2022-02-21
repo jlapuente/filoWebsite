@@ -12,7 +12,7 @@
                 <mat-label>Asignatura:</mat-label>
                 <mat-select (selectionChange)="updateSearch()" [(value)]="selectedGraph">
                   <mat-option></mat-option>
-                  <mat-option [value]="option" *ngFor="let option of searchList[selectedTerm]">{{ option.tittle }}
+                  <mat-option [value]="option" *ngFor="let option of searchList[selectedTerm].marks">{{ option.tittle }}
                   </mat-option>
                 </mat-select>
               </mat-form-field>

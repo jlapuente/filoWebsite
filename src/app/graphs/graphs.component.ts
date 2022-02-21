@@ -2,16 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Chart } from 'node_modules/chart.js';
 import { CONSTANTS } from '../properties/constants'
 import ChartDataLabels from 'chartjs-plugin-datalabels';
-import ipfMarks from '../../assets/json/marks/marks_ipf.json';
-import epistemologyMarks from '../../assets/json/marks/marks_epistemologia.json';
-import introducionPoliticaMarks from '../../assets/json/marks/marks_introduccion_politica.json';
-import introducionLogicaMarks from '../../assets/json/marks/marks_introduccion_logica.json'
-import antropologiaMarks from '../../assets/json/marks/marks_antropologia.json'
-import culturaMarks from '../../assets/json/marks/marks_cultura.json';
-import feminismoMarks from '../../assets/json/marks/marks_feminismo.json';
-import ciudadaniaMarks from '../../assets/json/marks/marks_ciudadania.json';
-import imagenMarks from '../../assets/json/marks/marks_imagen.json';
-import eticaMarks from '../../assets/json/marks/marks_etica.json';
+
 
 @Component({
   selector: 'app-graphs',
@@ -35,23 +26,17 @@ export class GraphsComponent implements OnInit {
 
   ngOnInit() {
     this.prepareLabels();
-    let term = [];
-    term.push(ipfMarks);
-    term.push(epistemologyMarks);
-    term.push(introducionPoliticaMarks);
-    term.push(antropologiaMarks);
-    term.push(introducionLogicaMarks);
-    term.push(culturaMarks);
-    term.push(feminismoMarks);
-    term.push(ciudadaniaMarks);
-    term.push(eticaMarks);
-    term.push(imagenMarks);
-    this.searchList.push(term);
-    term = [];
-    this.searchList.push(term);
+    this.searchList.push(CONSTANTS.FIRST_TERM);
+    this.searchList[0].marks.sort(function (a, b) {
+      return a.id - b.id || a.title.localeCompare(b.title);
+    });
+    this.searchList.push(CONSTANTS.SECOND_TERM); 
+    this.searchList.push(CONSTANTS.SECOND_TERM); 
+    this.searchList.push(CONSTANTS.SECOND_TERM); 
 
     console.log(this.searchList);
-    this.selectedGraph = this.searchList[0][0];
+    console.log(this.searchList[0].marks[0]);
+    this.selectedGraph = this.searchList[0].marks[0];
     this.marks = this.selectedGraph.items;
 
     // Declaramos el this como una variable externa para acceder desde dentro de la funcion, de lo contrario llamariamos a un supuesto this que referencia a la funcion
