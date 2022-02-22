@@ -4,7 +4,7 @@
     <h2 class="a11y">Glosario de términos filosóficos</h2>
     <div class="row">
       <ol class="nav">
-        <li (click)="changeGlossary(char)" *ngFor="let char of listOfChars"><span>{{char}}</span></li>
+        <li [attr.id]="'selectedChar' + char" [ngClass]="{'active': char === 'A'}" (click)="changeGlossary(char)" *ngFor="let char of listOfChars"><span>{{char}}</span></li>
       </ol>
     </div>
 
@@ -12,7 +12,7 @@
       <div class="col-sm-12 col-md-2">
         <h2>{{selectedChar}}</h2>
       </div>
-      <div class="col-sm-12 col-md-10">
+      <div class="col-sm-12 col-md-10 words">
         <dl *ngFor="let item of terms">
           <dt>{{item.name}}
             <!--span><a href="#">our prognosis</a></span-->

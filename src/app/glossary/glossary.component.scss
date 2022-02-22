@@ -11,7 +11,7 @@
   text-align: center;
 }
 
-#glossary-list ol.nav li{
+#glossary-list ol.nav li {
   color: #888;
   display: inline;
   padding: 10px;
@@ -29,10 +29,29 @@
   color: var(--accent-color);
 }
 
+#glossary-list ol.nav li.active {
+  color: var(--accent-color);
+}
+
 .container {
-  background-color: white;;
+  background-color: white;
+  min-height: 100%;
 }
 
 p {
   text-align: justify;
+}
+
+dd {
+  width: 95%;
+}
+
+.words {
+  border-left: 4px solid #F0F0F0;
+}
+
+@media screen and (max-width: 768px) {
+  #glossary-list ol.nav li {
+    margin: auto;
+  }
 }

@@ -19,17 +19,23 @@ export class GlossaryComponent implements OnInit {
     this.completeTerms = words;
     console.log(this.completeTerms);
     this.changeGlossary('A');
-    
+
     const alpha = Array.from(Array(26)).map((e, i) => i + 65);
     this.listOfChars = alpha.map((x) => String.fromCharCode(x));
     console.log(this.listOfChars);
 
   }
-  
-  changeGlossary(char){
+
+  changeGlossary(char) {
     this.selectedChar = char;
     this.terms = this.completeTerms.filter((term) => term.name.startsWith(char));
     console.log(this.terms);
+    let previousElement = document.getElementsByClassName('active')[0];
+    console.log(previousElement);
+    if (previousElement) {
+      previousElement.classList.remove("active")
+      document.getElementById('selectedChar' + char).classList.add('active');
+    }
   }
 
 }
