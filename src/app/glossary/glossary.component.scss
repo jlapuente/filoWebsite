@@ -1,0 +1,38 @@
+#glossary-list ol.nav {
+  border-top: 4px solid #F0F0F0;
+  border-bottom: 4px solid #F0F0F0;
+  clear: both;
+  float: left;
+  list-style: none;
+  margin: 20px 0 20px 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px 0;
+  text-align: center;
+}
+
+#glossary-list ol.nav li{
+  color: #888;
+  display: inline;
+  padding: 10px;
+  font-size: 330%;
+  font-weight: 400;
+  line-height: 1.65;
+  margin: 0;
+  color: var(--primary-color);
+  font-weight: normal;
+  margin: 0 0 0 -5px;
+  padding: 5px;
+}
+
+#glossary-list ol.nav li span:hover {
+  color: var(--accent-color);
+}
+
+.container {
+  background-color: white;;
+}
+
+p {
+  text-align: justify;
+}

@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { HomeComponent } from './home/home.component';
-import { NavbarComponent } from './navbar/navbar.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { TrelloComponent } from './trello/trello.component';
@@ -31,13 +30,13 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatTabsModule } from '@angular/material/tabs';
 import { TimelineComponent } from './timeline/timeline.component';
 import { GraphsComponent } from './graphs/graphs.component';
+import { GlossaryComponent } from './glossary/glossary.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GalleryComponent,
     HomeComponent,
-    NavbarComponent,
     AboutUsComponent,
     CalendarComponent,
     TrelloComponent,
@@ -49,7 +48,8 @@ import { GraphsComponent } from './graphs/graphs.component';
     ArticlesComponent,
     SanitizeHtml,
     TimelineComponent,
-    GraphsComponent
+    GraphsComponent,
+    GlossaryComponent
   ],
   imports: [
     BrowserModule,

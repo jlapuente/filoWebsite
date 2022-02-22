@@ -1,0 +1,32 @@
+<div class="container">
+
+  <article id="glossary-list">
+    <h2 class="a11y">Glosario de términos filosóficos</h2>
+    <div class="row">
+      <ol class="nav">
+        <li (click)="changeGlossary(char)" *ngFor="let char of listOfChars"><span>{{char}}</span></li>
+      </ol>
+    </div>
+
+    <section class="row" *ngIf="terms">
+      <div class="col-sm-12 col-md-2">
+        <h2>{{selectedChar}}</h2>
+      </div>
+      <div class="col-sm-12 col-md-10">
+        <dl *ngFor="let item of terms">
+          <dt>{{item.name}}
+            <!--span><a href="#">our prognosis</a></span-->
+          </dt>
+          <dd>
+            <p [innerHtml]="item.body">
+            </p>
+            <footer>
+              <a class="link" href="item.href" title="W3.org link to a element">{{item.href}}</a>
+              <a class="code" href="#a-element" title="A Element">{{item.type}}</a>
+            </footer>
+          </dd>
+        </dl>
+      </div>
+    </section>
+  </article>
+</div>
