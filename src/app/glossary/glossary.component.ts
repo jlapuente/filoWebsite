@@ -30,6 +30,10 @@ export class GlossaryComponent implements OnInit {
     this.selectedChar = char;
     this.terms = this.completeTerms.filter((term) => term.name.startsWith(char));
     console.log(this.terms);
+    this.terms = this.terms.sort(function (a, b) {
+      return a.name.localeCompare(b.name);
+    });
+    console.log(this.terms);
     let previousElement = document.getElementsByClassName('active')[0];
     console.log(previousElement);
     if (previousElement) {
