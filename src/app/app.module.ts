@@ -15,7 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTreeModule } from '@angular/material/tree'; 
 import { MatIconModule } from '@angular/material/icon'; 
 import { MatSliderModule } from '@angular/material/slider';
-import { MatButtonModule, MatListModule, MatMenuModule, MatPaginatorModule, MatSelectModule, MatTableModule } from '@angular/material';
+import { MatButtonModule, MatInputModule, MatListModule, MatMenuModule, MatPaginatorModule, MatSelectModule, MatTableModule } from '@angular/material';
 import { OrganizationComponent } from './organization/organization.component';
 import { MatToolbarModule } from '@angular/material/toolbar'; 
 import { MatSidenavModule } from '@angular/material/sidenav'; 
@@ -57,6 +57,7 @@ import { GlossaryComponent } from './glossary/glossary.component';
     BrowserAnimationsModule,
     MatTreeModule,
     MatIconModule,
+    MatInputModule,
     MatSliderModule,
     MatButtonModule,
     MatTabsModule,

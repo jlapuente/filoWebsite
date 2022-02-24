@@ -2,114 +2,133 @@
   {
     "name": "A priori",
     "href": "",
+    "category": "0",
     "body": "Loc. lat. que significa literalmente ‘por lo que precede’. En el ámbito de la filosofía, se emplea para referirse al conocimiento deductivo, esto es, al que se adquiere independientemente de la experiencia, yendo de las causas a los efectos y de lo universal a lo particular",
     "fullname": ""
   },
   {
     "name": "Epistemología",
     "href": "",
+    "category": "2",
     "body": "Parte de la filosofía que estudia los principios, fundamentos, extensión y métodos del conocimiento humano.",
     "fullname": ""
   },
   {
     "name": "A posteriori",
     "href": "",
+    "category": "0",
     "body": "Loc. lat. que significa literalmente ‘por lo que viene después’. En el ámbito de la filosofía, se emplea para referirse al conocimiento inductivo, esto es, al que se adquiere a partir de la experiencia, ascendiendo de los efectos a las causas",
     "fullname": ""
   },
   {
     "name": "Trascendental",
     "href": "",
+    "category": "2",
     "body": "Kant entiende por trascendental aquello que se refiere al conocimiento, pero no a su objeto ni a su contenido o material, sino a las formas apriorísticas, anteriores a la experiencia como son el tiempo, el espacio, las doce categorías y fundamentos de la lógica sin los cuales es imposible la experiencia y el conocimiento. El idealismo trascendental es la concepción epistemológica y metafísica que el filósofo prusiano del XVIII, I. Kant, expuso en su obra La crítica de la razón pura. Trascendental y trascendente son términos en la filosofía de Kant que consideraba trascendente todo aquello que para el rebasaba los límites del conocimiento como por ejemplo las llamadas “cosas en sí”.",
     "fullname": ""
   },
   {
     "name": "Postmodernidad",
     "href": "",
+    "category": "4",
     "body": "El estado de la cultura después de las transformaciones que han afectado a las reglas del juego de la ciencia, de la literatura y de las artes a partir del S. XIX. El concepto de postmodernidad, al menos en filosofía, se asocia al nombre del teórico literario y filósofo francés Jean-François Lyotard (1924-1998). En su libro, La condición postmoderna, sobre la noción del conocimiento en esta sociedad postmoderna abrió un gran debate que continua hasta hoy, Lyotard investigó sobre la condición del saber (y el poder, que son caras de una misma moneda) en las sociedades desarrolladas.",
     "fullname": ""
   },
   {
     "name": "Significado (Frege)",
     "href": "",
+    "category": "3",
     "body": "Frege diferencia entre la referencia de una expresión y su sentido. Sentido y referencia son dos aspectos distintos de significado. Para el tanto las expresiones del objeto como las del concepto tienen una referencia (Un objeto al que se refiere) y un sentido (una forma de hablar de ese objeto). Entiende que el lenguaje ha de estar relacionado con la realidad. Lo expuso en su artículo Sobre el sentido y la denotación de 1892.",
     "fullname": ""
   },
   {
     "name": "Falacia Naturalista",
     "href": "",
+    "category": "2",
     "body": "Es un error propio de las argumentaciones éticas. Consiste en considerar que todo lo natural es bueno, lo cual es una valoración ética sin fundamento. Al identificar una propiedad moral con una propiedad natural se incurre en una falacia, así al confundir “lo bueno” con “bueno”. Se comete un error al inferir una propiedad moral a partir de una natural.",
     "fullname": ""
   },
   {
     "name": "Diferencia Ontológica",
     "href": "",
+    "category": "2",
     "body": "Es un concepto introducido por Heidegger al criticar la metafísica occidental por olvidarse la diferencia entre ser y ente. El ser no es un ente. El ser es y el ente es la esencia, pero no es el ser. La diferencia ontológica es una noción que admite una formulación muy concisa: el ser no es el ente.  En Sein und Zeit esta afirmación aparece claramente dicha en el siguiente texto: “El ser es lo que determina al ente en cuanto ente, aquello respecto de lo cual el ente, sea cual fuere el modo en que se lo considere, es en cada caso siempre ya comprendido. El ser del ente no es el mismo un ente”",
     "fullname": ""
   },
   {
     "name": "Ojo Dios ",
     "href": "",
+    "category": "2",
     "body": "Según el realismo científico, el propósito de la ciencia es descubrir la verdad acerca de los aspectos observables e inobservables de la realidad objetiva e independiente de la mente, en la cual habitamos. Putnam y otros han objetado que tal posición realista metafísica presupone un punto de vista del Ojo de Dios (Como un narrador omnisciente en literatura) del cual no puede establecerse ningún sentido coherente. Para algunos el realismo científico no requiere la adopción de un punto de vista del Ojo de Dios; en lugar de esto, plantean que el realismo científico es una hipótesis acerca de la relación entre la teoría científica y la realidad que puede ser propuesta desde nuestra propia perspectiva humana. Incluso si el realismo científico requiriera ese punto de vista del Ojo de Dios, este no necesariamente estaría en detrimento del realismo, pues es posible desarrollar una perspectiva externa inteligible acerca de las relaciones epistémicas humanas que se entretejen con nuestra realidad circundante.",
     "fullname": "El punto de vista del ojo de Dios"
   },
   {
     "name": "Mito de lo dado",
     "href": "",
+    "category": "2",
     "body": "El mito de lo dado (W. Sellars) es la convicción de que hay un registro del conocimiento en el que no es posible que haya error. Sellars, en el siglo XX pone en cuestión la teoría de que a partir de “lo dado” podamos generar creencias de forma inferencial por eso lo llamó “el mito de lo dado”. Con él, critica la opinión de que el conocimiento de lo que percibimos puede ser independiente de los procesos conceptuales que resultan en la percepción.",
     "fullname": "El mito de lo dado"
   },
   {
     "name": "Holismo semántico",
     "href": "",
+    "category": "2",
     "body": "El holismo semántico es una doctrina de la filosofía del lenguaje que sostiene que una cierta parte del lenguaje, sea un término o una oración completa solo puede ser entendida mediante sus relaciones con un (previamente comprendido) segmento más amplio del lenguaje. Hay una polémica considerable acerca de en qué consiste exactamente ese segmento más amplio del lenguaje. En los últimos años, el debate en torno al holismo semántico (que es uno de entre los muchos tipos de holismo que son discutidos en la filosofía moderna) ha tendido a centrarse en la opinión de que el segmento en cuestión consiste en el lenguaje completo",
     "fullname": ""
   },
   {
     "name": "Verdad (Aristoteles)",
     "href": "",
+    "category": "2",
     "body": "Decir de lo que es, que es o de lo que no es, que no es. La verdad es expresada por el alma y se encuentra en el pensamiento que es el juicio, es la unión de lo material y lo espiritual, pero consiste en la correspondencia con los hechos. La teoría correspondista de la verdad o teoría de la verdad como correspondencia establece que la verdad o falsedad de una proposición está determinada únicamente por la forma en que se relaciona con el mundo y si describe con exactitud (se corresponde con) el mundo. Según esta teoría, la verdad consiste en una relación de adecuación o concordancia entre el entendimiento que conoce y lo real, junto con la expresión de un lenguaje (lenguaje apofántico que llamaba Aristóteles), el lenguaje propio de la ciencia, que expresa la verdad del conocimiento. No obstante, en la actualidad la no aceptación de un conocimiento metafísico de lo real hace que esta teoría se considere referente a una oración o expresión lingüística que es verdadera cuando lo que dice es el caso.",
     "fullname": ""
   },
   {
     "name": "Razonamiento Deductivo",
     "href": "",
+    "category": "3",
     "body": "Es una estrategia de razonamiento lógico. El razonamiento deductivo utiliza los términos valido o invalido. Una conclusión es válida si y solo si sus premisas son válidas. Infiere verdades particulares a partir de verdades generales",
     "fullname": ""
   },
   {
     "name": "Razonamiento Inductivo",
     "href": "",
+    "category": "3",
     "body": "Es una estrategia de razonamiento lógico. En el razonamiento inductivo los términos no son válidos ni inválidos, sus premisas no tienen que ser necesariamente validas sino ofrecer un fundamento (mejor o peor según su grado de verosimilitud o de probabilidad) para la conclusión. Infiere verdades generales a partir de verdades particulares. ",
     "fullname": ""
   },
   {
     "name": "Razonamiento abductivo",
     "href": "",
+    "category": "3",
     "body": "Es una estrategia de razonamiento lógico. En el razonamiento abductivo la descripción de un hecho o fenómeno llega a una hipótesis la cual explica las posibles razones o motivos del hecho mediante las premisas.",
     "fullname": ""
   },
   {
     "name": "La teoría de los tres mundos",
     "href": "",
+    "category": "5",
     "body": "La doctrina de los tres mundos es una forma de ver la realidad descrita por el filósofo austriaco Karl Popper, durante el tercer congreso Internacional de la Lógica, Metodología y Filosofía de la Ciencia en 1967. La doctrina consiste en que tres mundos interactúan entre sí. El primer mundo es el mundo de los objetos, no solo visibles, también cosas que escapan al ojo humano (el mundo de los objetos físicos. El mundo dos es el mundo de los procesos mentales, conscientes o inconscientes. Donde irradian las sensaciones de dolor, placer y el pensamiento (el mundo de las experiencias subjetivas). El mundo tres es el del conocimiento objetivo, donde se analizan los procesos mentales del mundo dos (los productos de la mente humana) tiene una “varianza” que ver con la información, allí los conceptos se convierten en conocimiento previo aprendizaje.Los objetos del mundo tres existen en el mundo uno, pero adquieren significado en el mundo tres. Ya vimos que nuestra información es de dos capas: la transmitida naturalmente, la genética y la transmitida por aprendizaje, la cultura. Por ello podemos decir: ¿Abarca el mundo tres toda la información, tanto natural como cultural o se limita al continente de la cultura? En general los textos de Popper parecen dejar muy claro que el mundo tres se circunscribe al ámbito de la cultura, aunque otros difieren en ese sentido.",
     "fullname": ""
   },
   {
     "name": "Lógica Modal",
     "href": "",
+    "category": "3",
     "body": "Una lógica modal es un sistema formal que intenta capturar el comportamiento deductivo de algún grupo de operadores modales. Los operadores modales son expresiones que califican la verdad de los juicios. Por ejemplo, en el juicio es necesario que 2 + 2 = 4, la expresión “es necesario que” es un operador modal que califica de necesaria a la verdad del juicio “2 +2 = 4”. De manera análoga, la expresión “siempre” califica a un juicio de verdadero como verdadero en cualquier momento, es decir, siempre. No es lo mismo decir que “está lloviendo” que decir “siempre está lloviendo”. En un sentido más restringido, sin embargo, una lógica modal es un sistema formal que intenta capturar el comportamiento deductivo de las expresiones “es necesario que” y “es posible que”. ",
     "fullname": ""
   },
   {
     "name": "Paradoja de Sorites",
     "href": "",
+    "category": "0",
     "body": "Atribuida a Eubulides de Mileto, filósofo griego de la escuela megárica o a Zenón de Elea, la paradoja del montón (o la paradoja de sorites) aparece cuando utilizamos el “sentido común” sobre conceptos vagos, preguntándose, por ejemplo: ¿En qué momento un montón de arena deja de serlo cuando se van quitando granos?",
     "fullname": ""
   },
   {
     "name": "ñ",
     "href": "",
+    "category": "4",
     "body": "",
     "fullname": ""
   }

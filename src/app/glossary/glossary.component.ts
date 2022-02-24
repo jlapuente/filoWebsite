@@ -14,32 +14,64 @@ export class GlossaryComponent implements OnInit {
   selectedChar: string = 'A';
   completeTerms: word[];
   listOfChars: string[] = [];
-
+  search: string = "";
+  
+  branches: any[] = [
+    { value: '0', viewValue: 'General' },
+    { value: '1', viewValue: 'Antropología' },
+    { value: '2', viewValue: 'Epistemología y Teoría del Conocimiento' },
+    { value: '3', viewValue: 'Lógica y Filosofía del lenguaje' },
+    { value: '4', viewValue: 'Política' },
+    { value: '5', viewValue: 'Metafísica y Ontología' }
+  ];
+  selectedBranch: any;
+  
   ngOnInit() {
     this.completeTerms = words;
-    console.log(this.completeTerms);
     this.changeGlossary('A');
 
     const alpha = Array.from(Array(26)).map((e, i) => i + 65);
     this.listOfChars = alpha.map((x) => String.fromCharCode(x));
-    console.log(this.listOfChars);
 
   }
 
   changeGlossary(char) {
+    this.search = "";
     this.selectedChar = char;
     this.terms = this.completeTerms.filter((term) => term.name.startsWith(char));
-    console.log(this.terms);
     this.terms = this.terms.sort(function (a, b) {
       return a.name.localeCompare(b.name);
     });
-    console.log(this.terms);
+    this.removeSelectedChar(char);
+  }
+  removeSelectedChar(char?) {
     let previousElement = document.getElementsByClassName('active')[0];
     console.log(previousElement);
-    if (previousElement) {
+    if (previousElement && char) {
       previousElement.classList.remove("active")
       document.getElementById('selectedChar' + char).classList.add('active');
     }
+  }
+
+  changeSearch() {
+    let tempTerms = this.completeTerms;
+    if(this.search){
+      tempTerms = tempTerms.filter((term) => {
+        return term.body.indexOf(this.search) > 0;
+      })
+    }
+    if(this.selectedBranch){
+      tempTerms = tempTerms.filter((term) => {
+        return term.category == this.selectedBranch;
+      })
+    }
+
+    this.terms = tempTerms;
+    this.removeSelectedChar();
+  }
+
+  getCategory(id){
+   return this.branches.find(branch => { return branch.value == id}).viewValue;
   }
 
 }
@@ -49,4 +81,5 @@ export class word {
   href: string;
   body: string;
   fullname: string;
+  category: any;
 }

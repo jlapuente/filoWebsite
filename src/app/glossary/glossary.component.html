@@ -2,9 +2,28 @@
 
   <article id="glossary-list">
     <h2 class="a11y">Glosario de términos filosóficos</h2>
+    <div class="row" style="align-items: center;">
+      <div class="col-sm-12 col-md-3">
+        <mat-form-field appearance="fill">
+          <mat-label>Busqueda por palabras</mat-label>
+          <input matInput minlength="3" [(ngModel)]="search" (change)="changeSearch()">
+        </mat-form-field>
+      </div>
+      <div class="col-sm-12 col-md-3">
+        <mat-form-field appearance="fill">
+          <mat-label>Rama</mat-label>
+          <mat-select [(ngModel)]="selectedBranch" (selectionChange)="changeSearch()">
+            <mat-option *ngFor="let branch of branches" [value]="branch.value">
+              {{branch.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
     <div class="row">
       <ol class="nav">
-        <li [attr.id]="'selectedChar' + char" [ngClass]="{'active': char === 'A'}" (click)="changeGlossary(char)" *ngFor="let char of listOfChars"><span>{{char}}</span></li>
+        <li [attr.id]="'selectedChar' + char" [ngClass]="{'active': char === 'A'}" (click)="changeGlossary(char)"
+          *ngFor="let char of listOfChars"><span>{{char}}</span></li>
       </ol>
     </div>
 
@@ -21,8 +40,11 @@
             <p [innerHtml]="item.body">
             </p>
             <footer>
-              <a class="link" href="item.href" title="W3.org link to a element">{{item.href}}</a>
-              <a class="code" href="#a-element" title="A Element">{{item.type}}</a>
+              <div style="display: flow-root;">
+                <a class="link" href="item.href" title="W3.org link to a element">{{item.href}}</a>
+                <a class="code" href="#a-element" title="A Element">{{item.type}}</a>
+                <span class="category" href="#a-element" title="A Element">{{getCategory(item.category)}}</span>
+              </div>
             </footer>
           </dd>
         </dl>
