@@ -1,0 +1,30 @@
+<div class="container" *ngIf="author">
+  <div class="row">
+    <h2>{{author.name}}</h2>
+    <div class="col-lg-4">
+      <table>
+        <tr *ngFor="let stat of author.stats">
+          <th scope="row" style="text-align:left;">{{stat.tittle}}</th>
+          <td colspan="2" style="text-align: right;">{{stat.body}}</td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-lg-8 introduction">
+      <p [innerHTML]="author.introduction"></p>
+    </div>
+  </div>
+  <div class="content">
+    <div *ngFor="let section of author.sections" class="contentRow">
+      <h2>{{section.title}}</h2>
+      <p [innerHTML]="section.body"></p>
+    </div>
+  </div>
+  <div class="footnotes">
+    <h2>Referencias</h2>
+    <ol>
+      <li *ngFor="let footnote of author.footnotes; let i = index">
+        <p id="footnote-{{i}}" [innerHTML]="footnote.content"></p>
+      </li>
+    </ol>
+  </div>
+</div>

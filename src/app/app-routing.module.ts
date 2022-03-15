@@ -12,6 +12,8 @@ import { StatsComponent } from './stats/stats.component';
 import { TeachersComponent } from './teachers/teachers.component';
 import { TimelineComponent } from './timeline/timeline.component';
 import { TrelloComponent } from './trello/trello.component';
+import { MapsComponent } from './maps/maps.component';
+import { AuthorsComponent } from './authors/authors.component';
 
 
 const routes: Routes = [
@@ -24,8 +26,10 @@ const routes: Routes = [
   { path: 'teachers', component: TeachersComponent},
   { path: 'articles', component: ArticlesComponent},
   { path: 'timeline', component: TimelineComponent},
+  { path: 'map', component: MapsComponent},
   { path: 'glossary', component: GlossaryComponent},
   { path: 'graphs', component: GraphsComponent},
+  { path: 'authors', component: AuthorsComponent},
   { path: '**', pathMatch: 'full', redirectTo: 'home' }
 
 ];

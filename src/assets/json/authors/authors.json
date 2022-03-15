@@ -1,0 +1,32 @@
+[
+  {
+    "id": "test",
+    "name": "test",
+    "stats": [
+      {
+        "tittle": "Fecha de nacimiento",
+        "body": "29/06/1999"
+      },
+      {
+        "tittle": "Lugar de nacimiento",
+        "body": "España"
+      }
+    ],
+    "introduction": "Ullamco proident fugiat ipsum adipisicing eu excepteur duis. Reprehenderit cupidatat amet consectetur enim reprehenderit consequat eiusmod. Cillum adipisicing sit aliqua ipsum non elit minim cupidatat velit est.",
+    "sections": [
+      {
+        "title": "Biografia",
+        "body": "Do ea culpa excepteur et consequat tempor aute id enim mollit ipsum et duis<sup><a href='/authors?author=test#footnote-0'>1</a></sup>. Voluptate ipsum nostrud laborum labore incididunt Lorem. Elit eiusmod ipsum veniam anim qui laborum magna. Aute cillum magna sint minim nostrud sint ullamco dolore eu aliquip. Aute in est laboris deserunt sunt sunt in nostrud incididunt laborum minim labore et. <br> Pariatur reprehenderit et elit quis. Eu eiusmod ipsum eiusmod eu consequat incididunt velit incididunt mollit ex. Amet officia excepteur ea dolor. Ea esse exercitation est labore laborum fugiat laboris. Adipisicing consectetur anim laboris aliqua Lorem magna ipsum deserunt laborum nostrud deserunt velit anim ex. Non id magna sit qui quis. Deserunt eiusmod irure exercitation quis sunt Lorem qui laboris minim minim."
+      },
+      {
+        "title": "Obra filosofica",
+        "body": "Sint voluptate consequat sint mollit pariatur excepteur est. Mollit duis esse velit commodo ullamco. Incididunt ea incididunt sit minim do consequat et ullamco commodo. Sunt esse esse enim sit anim amet labore pariatur commodo voluptate. Incididunt deserunt eiusmod laborum qui elit voluptate enim aliqua commodo non commodo elit. Laboris consectetur laboris mollit irure culpa cupidatat aute qui qui enim fugiat pariatur consequat do."
+      }
+    ],
+    "footnotes": [
+      {
+        "content": "Nisi voluptate amet laboris in mollit sunt ad velit amet excepteur labore occaecat nostrud qui. Exercitation consequat commodo Lorem laborum proident et Lorem. Sunt magna ea cillum dolore quis occaecat exercitation ut fugiat culpa mollit commodo aliquip mollit."
+      }
+    ]
+  }
+]

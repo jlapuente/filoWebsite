@@ -31,6 +31,8 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { TimelineComponent } from './timeline/timeline.component';
 import { GraphsComponent } from './graphs/graphs.component';
 import { GlossaryComponent } from './glossary/glossary.component';
+import { MapsComponent } from './maps/maps.component';
+import { AuthorsComponent } from './authors/authors.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,9 @@ import { GlossaryComponent } from './glossary/glossary.component';
     SanitizeHtml,
     TimelineComponent,
     GraphsComponent,
-    GlossaryComponent
+    GlossaryComponent,
+    MapsComponent,
+    AuthorsComponent
   ],
   imports: [
     BrowserModule,
