@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import  medievalJson from '../../assets/json/timelines/medieval.json';
+import medievalJson from '../../assets/json/timelines/medieval.json';
+import modernaJson from '../../assets/json/timelines/moderna.json';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { faHourglass } from '@fortawesome/free-solid-svg-icons';
+import { FormControl } from '@angular/forms';
+import moment from 'moment';
+import 'moment/locale/es';
 
 declare var $: any;
 
@@ -13,34 +17,63 @@ declare var $: any;
 export class TimelineComponent implements OnInit {
 
   selected: number = 1;
-  timelines: { id: number, period: string, items: timeLineItem[] }[];
+  timelines: timeLine[];
+  editableJson: string = "";
   selectedItem: timeLineItem;
-
   $: any;
   faUser = faUser;
   faHourglass = faHourglass;
+  activeLink;
+  edition: boolean = true;
+  editableTimeLine: timeLine;
+
   constructor() { }
 
   ngOnInit() {
-    this.timelines = [];
-    this.timelines.push(medievalJson);
-    console.log(medievalJson);
-    this.timelines.push(medievalJson);
-    this.timelines[1].items.sort(function (a, b) {
-      return a.id - b.id || a.title.localeCompare(b.title);
-    });
-    this.selectedItem = this.timelines[1].items[0];
-    $('[data-toggle="tooltip"]').tooltip();
-    /* this.timelines = [
-      { "id": 0, "period": "Filosofia Antigua", "items": [{ "id": 0, "title": "Santo Tomas", "inverted": true, "icon": "", "date": "2022", "body": "cuerpo" }, { "id": 0, "title": "Santo Tomas", "inverted": false, "icon": "", "date": "2022", "body": "cuerpo" }] },
-      { "id": 1, "period": "Filosofia Medieval", "items": [{ "id": 0, "title": "Patrística", "inverted": true, "icon": "", "date": "100 DC - 451 (Concilio de Calcedonia)", "body": "La patrística se caracterizó por ser el periodo en que se gestó el contenido doctrinal de las creencias religiosas cristianas, así como su defensa apologética contra los ataques de las religiones paganas primero, y sucesivamente de las interpretaciones que dieron lugar a las herejías, después.​ Durante este período, el cristianismo es difundido masivamente por los profetas, tomando fuerza entre la población y desplazando a las religiones politeístas. <br> <br> Destacamos aqui a San Agustin de Hipona " }, { "id": 0, "title": "Santo Tomas", "inverted": true, "icon": "", "date": "2022", "body": "cuerpo" }] },
-      { "id": 2, "period": "Filosofia Moderna", "items": [{ "id": 0, "title": "Santo Tomas", "inverted": true, "icon": "", "date": "2022", "body": "cuerpo" }, { "id": 0, "title": "Santo Tomas", "inverted": true, "icon": "", "date": "2022", "body": "cuerpo" }] }
-    ]; */
-
+    this.prepareContent();
+    this.prepareTimeLines();
   }
 
-  selectItem(item){
-    console.log("he entrado");
+  prepareContent() {
+    moment.locale('es');
+    $('[data-toggle="tooltip"]').tooltip();
+  }
+
+  prepareTimeLines() {
+    this.editableJson = JSON.stringify(modernaJson, null, 2);
+    this.timelines = [];
+    this.timelines.push(medievalJson);
+    this.timelines.push(modernaJson);
+    this.timelines.forEach(element => {
+      this.sortTimeLine(element);
+    });
+    this.selectedItem = this.timelines[0].items[0];
+    this.activeLink = this.timelines[0];
+  }
+
+  sortTimeLine(elem: timeLine) {
+    elem.items = elem.items.sort((a, b) => {
+      let firstDate = a.date;
+      let secondDate = b.date;
+      for (let i = firstDate.length; i < 4; i++) {
+        firstDate = "0" + firstDate;
+      }
+      for (let i = secondDate.length; i < 4; i++) {
+        secondDate = "0" + secondDate;
+      }
+      if (firstDate.length <= 4) {
+        firstDate = "01/01/" + firstDate;
+      }
+      if (secondDate.length <= 4) {
+        secondDate = "01/01/" + secondDate;
+      }
+      let aDate = moment(firstDate, 'DD/MM/YYYY', false)
+      let bDate = moment(secondDate, 'DD/MM/YYYY', false)
+      return aDate.valueOf() - bDate.valueOf();
+    });
+  }
+
+  selectItem(item) {
     this.selectedItem = item;
     console.log(this.selectedItem);
     this.openModal("");
@@ -48,6 +81,15 @@ export class TimelineComponent implements OnInit {
 
   openModal(text: string) {
     $('#myModal').modal('toggle');
+  }
+
+  convertTimeLine() {
+    this.edition = !this.edition;
+    if(!this.edition){
+      this.editableTimeLine = JSON.parse(this.editableJson);
+      this.sortTimeLine(this.editableTimeLine);
+    }
+    console.log(this.editableTimeLine);
   }
 
 
@@ -59,8 +101,16 @@ export class timeLineItem {
   inverted: boolean;
   icon: string;
   date: string;
+  place: string;
   body: string;
   portrait: string;
+
+  constructor() { }
+}
+export class timeLine {
+  id: number;
+  period: string;
+  items: timeLineItem[];
 
   constructor() { }
 }

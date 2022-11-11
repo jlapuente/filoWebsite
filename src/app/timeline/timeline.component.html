@@ -1,25 +1,93 @@
 <!------ Include the above in your HEAD tag ---------->
 <div class="wrapper">
-  <div class="container" *ngIf="selected == timelines[1].id">
-    <div class="page-header">
-      <h1 id="timeline">Linea de tiempo del mundo antiguo</h1>
-    </div>
-    <ul class="timeline">
-      <li *ngFor="let item of timelines[selected].items" [ngClass]="{'timeline-inverted': item.inverted}"
-        (click)="selectItem(item)">
-        <div class="timeline-badge success"><fa-icon [icon]="item.icon == 'user' ? faUser : faHourglass"></fa-icon></div>
-        <div class="timeline-panel">
-          <div class="timeline-heading">
-            <h4 class="timeline-title">{{item.title}}</h4>
-            <p><small class="text-muted"><fa-icon [icon]="faUser"></fa-icon> {{item.date}} </small></p>
+  <mat-tab-group dynamicHeight>
+    <mat-tab *ngFor="let timeline of timelines" label={{timeline.period}}>
+      <div class="container">
+        <div class="page-header">
+          <h1 id="timeline">{{timeline.period}}</h1>
+        </div>
+        <ul class="timeline">
+          <li *ngFor="let item of timeline.items" [ngClass]="{'timeline-inverted': item.inverted}"
+            (click)="selectItem(item)">
+            <div class="timeline-badge success">
+              <fa-icon [icon]="item.icon == 'user' ? faUser : faHourglass"></fa-icon>
+            </div>
+            <div class="timeline-panel">
+              <div class="timeline-heading">
+                <h4 class="timeline-title">{{item.title}}</h4>
+                <p><small class="text-muted">
+                    <fa-icon [icon]="faUser"></fa-icon> {{item.date}}
+                    <br>
+                    {{item.place}}
+                  </small></p>
+              </div>
+              <div class="timeline-body">
+                <!-- <p [innerHTML]="item.body"></p> -->
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </mat-tab>
+    <!-- Tercera pestaña, horizontal -->
+    <!-- <mat-tab  label="Linea de tiempo horizontal">
+
+      <div class="top">
+        <span *ngFor="let item of this.timelines[0].items; let i = index">
+          <div class="top-element" (click)="selectItem(item)" *ngIf="item.inverted"> {{item.date}} <br> {{item.title}}</div>
+        </span>
+      </div>
+      <div class="line"></div>
+      <div class="bottom">
+        <span *ngFor="let item of this.timelines[0].items; let i = index">
+          <div class="bottom-element" (click)="selectItem(item)" *ngIf="!item.inverted">{{item.date}} <br> {{item.title}}</div>
+        </span>
+      </div>
+    </mat-tab> -->
+    <!-- Cuarta linea de tiempo-->
+    <mat-tab label="Crea tu linea de tiempo" style="height: 100%">
+      <div class="body">
+        <div class="container">
+          <div class="jsonEditor" *ngIf="edition">
+            <mat-form-field class="example-full-width" appearance="fill" style="width: 100%; height: 100%;">
+              <mat-label>Linea de tiempo editable</mat-label>
+              <textarea matInput [(ngModel)]="editableJson"></textarea>
+            </mat-form-field>
           </div>
-          <div class="timeline-body">
-            <!-- <p [innerHTML]="item.body"></p> -->
+          <div class="timelineContent" *ngIf="!edition">
+            <div class="container">
+              <div class="page-header">
+                <h1 id="timeline">{{editableTimeLine.period}}</h1>
+              </div>
+              <ul class="timeline">
+                <li *ngFor="let item of editableTimeLine.items" [ngClass]="{'timeline-inverted': item.inverted}"
+                  (click)="selectItem(item)">
+                  <div class="timeline-badge success">
+                    <fa-icon [icon]="item.icon == 'user' ? faUser : faHourglass"></fa-icon>
+                  </div>
+                  <div class="timeline-panel">
+                    <div class="timeline-heading">
+                      <h4 class="timeline-title">{{item.title}}</h4>
+                      <p><small class="text-muted">
+                          <fa-icon [icon]="faUser"></fa-icon> {{item.date}} - {{item.place}}
+                        </small></p>
+                    </div>
+                    <div class="timeline-body">
+                      <!-- <p [innerHTML]="item.body"></p> -->
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-      </li>
-    </ul>
-  </div>
+        <button mat-fab aria-label="Example icon-button with a heart icon" (click)="convertTimeLine()">
+          <mat-icon>favorite</mat-icon>
+        </button>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+  <!-- Modal -->
   <div id="myModal" class="modal fade authorModal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">

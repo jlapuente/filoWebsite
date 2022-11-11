@@ -7,7 +7,8 @@
       "title": "Patrística",
       "inverted": true,
       "icon": "movement",
-      "date": "100 - 451 (Concilio de Calcedonia) D.C.",
+      "date": "100",
+      "place": "aqui",
       "body": "La patrística se caracterizó por ser el periodo en que se gestó el contenido doctrinal de las creencias religiosas cristianas, así como su defensa apologética contra los ataques de las religiones paganas primero, y sucesivamente de las interpretaciones que dieron lugar a las herejías, después. Durante este período, el cristianismo es difundido masivamente por los profetas, tomando fuerza entre la población y desplazando a las religiones politeístas. <br> <br> Destacamos aqui a San Agustin de Hipona ",
       "portrait": ""
     },
@@ -16,81 +17,30 @@
       "title": "Pablo de Tarso",
       "inverted": false,
       "icon": "user",
-      "date": "10 - 64 D.C.",
+      "date": "10",
+      "place": "aqui",
       "body": "Pablo de Tarso, es llamado el «Apóstol de los gentiles», el «Apóstol de las naciones», o simplemente «el Apóstol». Fundador de comunidades cristianas, evangelizador en varios de los más importantes centros urbanos del Imperio romano tales como Antioquía, Corinto, Éfeso y Roma, y redactor de algunos de los primeros escritos canónicos cristianos —incluyendo el más antiguo conocido, la Primera epístola a los tesalonicenses—, Pablo constituye una personalidad de primer orden del cristianismo primitivo, y una de las figuras más influyentes en toda la historia del cristianismo.",
       "portrait": "https://www.biografiasyvidas.com/biografia/p/fotos/pablo.jpg"
     },
     {
-      "id": 6,
-      "title": "Rudolf Otto",
-      "inverted": true,
+      "id": 2,
+      "title": "Agustín de Hipona",
+      "inverted": false,
       "icon": "user",
-      "date": "1869 - 1937 D.C.",
-      "body": "Rudolf Otto (25 de septiembre de 1869, en Peine, cerca de Hanóver, Alemania - 6 de marzo de 1937, en Marburg, Hesse, Alemania) fue un eminente teólogo protestante alemán y un gran erudito en el estudio comparativo de las religiones. ",
-      "portrait": ""
-    },
-    {
-      "id": 5,
-      "title": "Blaise Pascal",
-      "inverted": true,
-      "icon": "user",
-      "date": "1623 - 1662 D.C.",
-      "body": "Blaise Pascal fue un matemático, físico, filósofo, teólogo católico y apologista francés. Después de un trastorno depresivo y una experiencia religiosa profunda en 1654, Pascal se dedicó también a la filosofía y a la teología. <br> <br> 'Es el corazón quien siente a Dios y no la razón. Esto es lo que es la fe: Dios sensible al corazón no a la razón.'",
-    "portrait": ""
+      "date": "13/11/354",
+      "place": "Tagaste (Actual Argelia)",
+      "body": "Pablo de Tarso, es llamado el «Apóstol de los gentiles», el «Apóstol de las naciones», o simplemente «el Apóstol». Fundador de comunidades cristianas, evangelizador en varios de los más importantes centros urbanos del Imperio romano tales como Antioquía, Corinto, Éfeso y Roma, y redactor de algunos de los primeros escritos canónicos cristianos —incluyendo el más antiguo conocido, la Primera epístola a los tesalonicenses—, Pablo constituye una personalidad de primer orden del cristianismo primitivo, y una de las figuras más influyentes en toda la historia del cristianismo.",
+      "portrait": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Augustine_Lateran.jpg/200px-Augustine_Lateran.jpg"
     },
     {
       "id": 2,
-      "title": "San Pedro Damian",
+      "title": "Juan de Fidanza",
       "inverted": false,
       "icon": "user",
-      "date": "1007 - 1072 D.C.",
-      "portrait": "",
-      "body": "Fue un cardenal benedictino de la Iglesia católica y precursor de la reforma gregoriana. San Pedro Damian es un ejemplo de antifilosofo. el deseo de saber es la obra del mismísimo diablo. Podemos resumir la postura de los anti filósofos con un silogismo, que reza como sigue: 'Solo importa la salvación ahora bien la palabra de dios es la salvación por tanto solo importa la palabra de dios'. "
-    },
-    {
-      "id": 3,
-      "title": "Averroes",
-      "inverted": true,
-      "icon": "user",
-      "date": "1126 - 1198 D.C.",
-      "portrait": "",
-      "body": "Filósofo y médico andalusí musulmán, maestro de filosofía y leyes islámicas, matemáticas, astronomía y medicina. <br> <br> Averroes consideraba que la razón sí que podía ser un ejercicio autónomo, extraído a la influencia de la fe. Por tanto, lo que hacía era reconocer a cada uno un dominio propio y no lo hacía en detrimento del otro."
-    },
-    {
-      "id": 4,
-      "title": "Santo Tomas de Aquino",
-      "inverted": false,
-      "icon": "user",
-      "date": "1225 - 1274 D.C.",
-      "portrait": "",
-      "body": " Fraile, teólogo y filósofo católico perteneciente a la Orden de Predicadores, es considerado el principal representante de la enseñanza escolástica y una de las mayores figuras de la teología sistemática. <br><br>'La filosofía es la sierva de la teología'"
-    },
-    {
-      "id": 4,
-      "title": "San Agustin de Hipona",
-      "inverted": false,
-      "icon": "user",
-      "date": "354 - 430 D.C.",
-      "portrait": "",
-      "body": "<br><br> 'Fides quaerens intellectum': Es una fórmula que acuña San Agustín y que será retomada por San Anselmo. Significa 'la fe busca el entendimiento'."
-    },
-    {
-      "id": 4,
-      "title": "San Anselmo",
-      "inverted": false,
-      "icon": "user",
-      "portrait": "",
-      "date": "1225 - 1274 D.C.",
-      "body": ""
-    },
-    {
-      "id": 4,
-      "title": "Santo Tomas de Aquino",
-      "inverted": false,
-      "icon": "user",
-      "date": "1225 - 1274 D.C.",
-      "portrait": "",
-      "body": ""
+      "date": "1217",
+      "place": "Bagnoregio (Italia)",
+      "body": "Pablo de Tarso, es llamado el «Apóstol de los gentiles», el «Apóstol de las naciones», o simplemente «el Apóstol». Fundador de comunidades cristianas, evangelizador en varios de los más importantes centros urbanos del Imperio romano tales como Antioquía, Corinto, Éfeso y Roma, y redactor de algunos de los primeros escritos canónicos cristianos —incluyendo el más antiguo conocido, la Primera epístola a los tesalonicenses—, Pablo constituye una personalidad de primer orden del cristianismo primitivo, y una de las figuras más influyentes en toda la historia del cristianismo.",
+      "portrait": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Francisco_de_Zurbar%C3%A1n_-_The_Prayer_of_St._Bonaventura_about_the_Selection_of_the_New_Pope_-_Google_Art_Project.jpg/245px-Francisco_de_Zurbar%C3%A1n_-_The_Prayer_of_St._Bonaventura_about_the_Selection_of_the_New_Pope_-_Google_Art_Project.jpg"
     }
   ]
 }
