@@ -3,7 +3,7 @@
     <button mat-icon-button (click)="sidenav.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
-    <h1>Segundo de Filosofía (UNIZAR)</h1>
+    <h1>Filosofía Universidad de Zaragoza</h1>
     <span class="menu-spacer"></span>
     <!-- <div>
       <a mat-button [routerLink]="'/accounts'"> Accounts </a>
@@ -23,16 +23,17 @@
   <mat-sidenav #sidenav>
     <mat-nav-list>
       <a mat-list-item [routerLink]="'/home'"> Inicio </a>
-      <a mat-list-item [routerLink]="'/teachers'"> Profesores </a>
-      <a mat-list-item [routerLink]="'/organization'"> Organizador </a>
+      <!-- <a mat-list-item [routerLink]="'/teachers'"> Profesores </a> -->
+      <!-- <a mat-list-item [routerLink]="'/organization'"> Organizador </a> -->
       <!-- <a mat-list-item [routerLink]="'/stats'"> Gráficos </a> -->
       <!-- <a mat-list-item [routerLink]="'/info'"> Información </a> -->
       <!-- <a mat-list-item [routerLink]="'/articles'"> Articulos </a> -->
-      <!-- <a mat-list-item [routerLink]="'/about-us'"> Histórico de Cambios </a> -->
-      <a mat-list-item [routerLink]="'/gallery'"> Galeria </a>
-      <a mat-list-item [routerLink]="'/timeline'"> Lineas de tiempo </a>
+      <!-- <a mat-list-item [routerLink]="'/gallery'"> Galeria </a> -->
+      <a mat-list-item [routerLink]="'/authors'"> Autores </a>
       <a mat-list-item [routerLink]="'/glossary'"> Glossary </a>
-      <a mat-list-item [routerLink]="'/graphs'"> Graficos </a>
+      <a mat-list-item [routerLink]="'/about-us'"> Histórico de Cambios </a>
+      <a mat-list-item [routerLink]="'/timeline'"> Lineas de tiempo </a>
+      <!-- <a mat-list-item [routerLink]="'/graphs'"> Graficos </a> -->
       <a mat-list-item (click)="sidenav.toggle()" mat-list-item>Close</a>
     </mat-nav-list>
   </mat-sidenav>

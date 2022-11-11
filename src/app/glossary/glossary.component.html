@@ -1,5 +1,4 @@
 <div class="container">
-
   <article id="glossary-list">
     <h2 class="a11y">Glosario de términos filosóficos</h2>
     <div class="row" style="align-items: center;">
@@ -19,11 +18,15 @@
           </mat-select>
         </mat-form-field>
       </div>
+      <div class="col-sm-12 col-md-3">
+        <button mat-raised-button color="primary" (click)="clearFilters()">Limpiar filtros</button>
+      </div>
     </div>
     <div class="row">
       <ol class="nav">
-        <li [attr.id]="'selectedChar' + char" [ngClass]="{'active': char === 'A'}" (click)="changeGlossary(char)"
-          *ngFor="let char of listOfChars"><span>{{char}}</span></li>
+        <li [attr.id]="'selectedChar' + char" (click)="changeGlossary(char)" class="char" *ngFor="let char of listOfChars">
+          <span>{{char}}</span>
+        </li>
       </ol>
     </div>
 
@@ -41,9 +44,9 @@
             </p>
             <footer>
               <div style="display: flow-root;">
-                <a class="link" href="item.href" title="W3.org link to a element">{{item.href}}</a>
-                <a class="code" href="#a-element" title="A Element">{{item.type}}</a>
-                <span class="category" href="#a-element" title="A Element">{{getCategory(item.category)}}</span>
+                <a class="link" href="item.href" title="Reference to source">{{item.href}}</a>
+                <a class="code" href="#a-element" title="Code">{{item.type}}</a>
+                <span class="category" href="#a-element" title="Category" (click)="this.selectedBranch = getCategory(item.category)">{{getCategory(item.category)}}</span>
               </div>
             </footer>
           </dd>

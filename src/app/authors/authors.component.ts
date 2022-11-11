@@ -22,6 +22,9 @@ export class AuthorsComponent implements OnInit {
         this.query = params.author;
         console.log(this.query); // price
         this.author = authors.find((term) => term.id == this.query);
+        if(this.author == undefined){
+          this.author = authors[0];
+        }
         console.log(this.author);
         console.log(authors);
       }

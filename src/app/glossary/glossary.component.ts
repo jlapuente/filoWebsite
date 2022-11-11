@@ -15,8 +15,10 @@ export class GlossaryComponent implements OnInit {
   completeTerms: word[];
   listOfChars: string[] = [];
   search: string = "";
-  
+  selectedBranch: any;
+
   branches: any[] = [
+    { value: '-1', viewValue: '' },
     { value: '0', viewValue: 'General' },
     { value: '1', viewValue: 'Antropología' },
     { value: '2', viewValue: 'Epistemología y Teoría del Conocimiento' },
@@ -24,56 +26,75 @@ export class GlossaryComponent implements OnInit {
     { value: '4', viewValue: 'Política' },
     { value: '5', viewValue: 'Metafísica y Ontología' }
   ];
-  selectedBranch: any;
-  
+
   ngOnInit() {
     this.completeTerms = words;
-    this.changeGlossary('A');
+    this.changeGlossary('');
 
     const alpha = Array.from(Array(26)).map((e, i) => i + 65);
     this.listOfChars = alpha.map((x) => String.fromCharCode(x));
 
   }
 
+
   changeGlossary(char) {
-    this.search = "";
-    this.selectedChar = char;
-    this.terms = this.completeTerms.filter((term) => term.name.startsWith(char));
-    this.terms = this.terms.sort(function (a, b) {
-      return a.name.localeCompare(b.name);
-    });
-    this.removeSelectedChar(char);
+    // If the user clicks the same char as selected, then we remove it
+    if (this.selectedChar == char) {
+      this.selectedChar = "";
+    } else {
+      this.selectedChar = char;
+    }
+    this.changeSelectedCharClass(this.selectedChar);
+    this.filterByChar(this.selectedChar);
+    this.changeSearch();
   }
-  removeSelectedChar(char?) {
-    let previousElement = document.getElementsByClassName('active')[0];
-    console.log(previousElement);
-    if (previousElement && char) {
-      previousElement.classList.remove("active")
+
+  changeSelectedCharClass(char?) {
+    var previousElement = document.getElementsByClassName('active')[0];
+    if (previousElement) {
+      previousElement.classList.remove('active');
+    }
+    if (char) {
       document.getElementById('selectedChar' + char).classList.add('active');
     }
   }
 
+  filterByChar(char) {
+    this.terms = this.completeTerms.filter((term) => term.name.startsWith(char));
+    this.terms = this.terms.sort(function (a, b) {
+      return a.name.localeCompare(b.name);
+    });
+  }
+
   changeSearch() {
-    let tempTerms = this.completeTerms;
-    if(this.search){
+
+    this.filterByChar(this.selectedChar);
+    let tempTerms = this.terms;
+
+    if (this.search) {
       tempTerms = tempTerms.filter((term) => {
         return term.body.indexOf(this.search) > 0;
       })
     }
-    if(this.selectedBranch){
+
+    if (this.selectedBranch) {
       tempTerms = tempTerms.filter((term) => {
         return term.category == this.selectedBranch;
       })
     }
 
     this.terms = tempTerms;
-    this.removeSelectedChar();
   }
 
-  getCategory(id){
-   return this.branches.find(branch => { return branch.value == id}).viewValue;
+  getCategory(id) {
+    return this.branches.find(branch => { return branch.value == id }).viewValue;
   }
 
+  clearFilters() {
+    this.selectedBranch = null;
+    this.search = ''
+    this.changeSearch();
+  }
 }
 
 export class word {
